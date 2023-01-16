@@ -57,29 +57,50 @@ $(document).ready(function() {
   
   })
   
-  const title = Math.floor(Math.random() * 2);
-  const songs = ['caramelldansen','toothache']
-  const audio = document.querySelector('#audio');
 
-  let songindex = Math.floor(Math.random() * 2);
+  $("#startbtn").click(function() {
+    let songindex = Math.floor(Math.random() * 2);
+    const title = Math.floor(Math.random() * 2);
+    const songs = ['caramelldansen','toothache']
+    const audio = document.querySelector('#audio');
+    var timeleft = 5;
+    var timerStart = setInterval(function(){
+      if(timeleft <= 0){
+        $("#time").hide();
+        clearInterval(timerStart);
+        loadSong(songs[songindex])
+        playSong();
+  
+      }
+      else {
+          $("#time").html(timeleft);
+      }
+      timeleft -= 1;
+    }, 1000
+    )
 
-  loadSong(songs[songindex])
+  })
 
+
+
+
+
+
+  //To get a random mp3 title and play it
   function loadSong(song) {
     
     audio.src = `music/${song}.mp3`
 
   };
 
-
+  //To play the song
   function playSong() {
     audio.play();
-
     setTimeout(function(){
         audio.pause();
-        alert("Audio stopped");
     },
     10000);
   }
+
 
   
