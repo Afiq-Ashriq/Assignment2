@@ -3,8 +3,12 @@
     
 }
 
+.song-button {
+    display: flex;
+    flex-direction: column;
+}
 .song-button button {
-    padding: 100px 200px;
+    padding: 50px 50px;
     margin: 5px;
 }
 
