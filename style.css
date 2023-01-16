@@ -2,3 +2,29 @@
     font-size: 100px;
     
 }
+
+.song-button button {
+    padding: 100px 200px;
+    margin: 5px;
+}
+
+.correct {
+    background-color: green;
+
+}
+
+.wrong {
+    background-color: red;
+}
+
+#startbtn {
+    width: 400px;
+    height: 400px;
+    background-color: yellow;
+}
+#startbtn:hover {
+    cursor: pointer;
+    scale: 1.5;
+
+    
+}

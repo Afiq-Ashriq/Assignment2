@@ -53,24 +53,46 @@ $(document).ready(function() {
     //because our content is dynamic in nature, we listen in on the main container which is "#student-list". For each row we have a class .update to help 
   
 
-    
-  
-  })
-  
 
+  })
+  $(".song-button").hide();
+  $("#endscreen").hide();
+  var points = 0
+  const rounds = 5;
+  let songindex = Math.floor(Math.random() * 4);
+  const title = Math.floor(Math.random() * 4);
+  const songs = ['caramelldansen','toothache','getlucky','nooneknows']
+  const audio = document.querySelector('#audio');
+  let correctAns = songs[songindex];
+  var timeleft = 5;
   $("#startbtn").click(function() {
-    let songindex = Math.floor(Math.random() * 2);
-    const title = Math.floor(Math.random() * 2);
-    const songs = ['caramelldansen','toothache']
-    const audio = document.querySelector('#audio');
-    var timeleft = 5;
     var timerStart = setInterval(function(){
       if(timeleft <= 0){
         $("#time").hide();
+        startGame();
+        $(".song-button").show();
         clearInterval(timerStart);
-        loadSong(songs[songindex])
-        playSong();
-  
+        $(".option").click(function(){
+          if(this.innerHTML === correctAns){
+            $(this).addClass("correct");
+            if(round < rounds){
+              points += 150;
+              setTimeout(newRound, 2000);
+            } else {
+              setTimeout(resetGame,3000);
+              $("#startbtn").hide()
+              setTimeout($("#endscreen").text(points),3000);
+              $("#endscreen").show();
+            }
+            
+          }
+          else {
+            $(this).addClass("wrong");
+            $("#btn4").addClass("correct");
+            setTimeout(newRound, 2000);
+          }
+          $(".option").not(this).prop("disabled",true);
+        })
       }
       else {
           $("#time").html(timeleft);
@@ -79,6 +101,65 @@ $(document).ready(function() {
     }, 1000
     )
 
+
+    function startGame() {
+      loadSong(songs[songindex]);
+      playSong();
+      let opt1 = Math.floor(Math.random() * 4);
+      $("#btn1").text(songs[opt1]);
+      let opt2 = Math.floor(Math.random() * 4);
+      $("#btn2").text(songs[opt2]);
+      let opt3 = Math.floor(Math.random() * 4);
+      $("#btn3").text(songs[opt3]);
+      let opt4 = Math.floor(Math.random() * 4);
+      $("#btn4").text(songs[opt4]);
+    }
+
+    function loadSong(song) {
+    
+      audio.src = `music/${song}.mp3`
+  
+    };
+  
+    //To play the song
+    function playSong() {
+      audio.play();
+      setTimeout(function(){
+          audio.pause();
+      },
+      10000);
+    };
+
+  })
+
+
+  let round = 1;
+  function newRound() {
+  round++;
+  resetGame();
+  selectNewSong();
+  startGame();
+  $(".song-button").show();
+}
+
+function resetGame() {
+  audio.src = ""
+  $(".song-button").hide();
+  $(".option").prop("disabled",false);
+  $(".option").removeClass("correct");
+  $(".option").removeClass("wrong");
+  $("#btn1").text("");
+  $("#btn2").text("");
+  $("#btn3").text("");
+  $("#btn4").text("");
+}
+
+
+
+
+
+  document.getElementsByClassName("song-button").addEventListener("submit",function(event){
+    event.preventDefault();
   })
 
 
@@ -86,21 +167,8 @@ $(document).ready(function() {
 
 
 
-  //To get a random mp3 title and play it
-  function loadSong(song) {
-    
-    audio.src = `music/${song}.mp3`
 
-  };
 
-  //To play the song
-  function playSong() {
-    audio.play();
-    setTimeout(function(){
-        audio.pause();
-    },
-    10000);
-  }
 
 
   
