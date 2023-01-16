@@ -10,9 +10,9 @@ Users can create an account.
 
 
 # References
-To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
-To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-setTimeout syntax https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+- To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
+- To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+- setTimeout syntax https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 
 
 # Credits
