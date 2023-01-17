@@ -1,3 +1,8 @@
-#login-main {
-    margin-top: 100px;
+.btn-circle {
+    width: 80px;
+	height: 80px;
+	padding: 13px 18px;
+	border-radius: 60px;
+	font-size: 15px;
+	text-align: center;
 }
