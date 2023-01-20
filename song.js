@@ -1,4 +1,8 @@
 
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
   $(".song-button").hide();
   $("#endscreen").hide();
   let usedSongs = []
@@ -6,10 +10,10 @@
   var coins = 0
   const rounds = 5;
   var songindex = Math.floor(Math.random() * 8);
-  const title = Math.floor(Math.random() * 8);
-  const songs = ['caramelldansen','toothache','getlucky','nooneknows','africa','billiejean','livinonaprayer','takeonme']
+  const title = ['Caramelldansen','Toothache','Get Lucky','No One Knows','Africa','Billie Jean', "Livin' on a prayer", 'Take on me'];
+  const songs = ['caramelldansen','toothache','getlucky','nooneknows','africa','billiejean','livinonaprayer','takeonme'];
   const audio = document.querySelector('#audio');
-  let correctAns = songs[songindex];
+  let correctAns = title[songindex];
   var timeleft = 5;
   $(document).ready(function() {
     var timerStart = setInterval(function(){
@@ -23,10 +27,9 @@
             let timetaken = audio.currentTime;
             $(this).addClass("correct");
             if(round < rounds){
-              points += 150*timetaken;
-              coins = points * 0.01;
+              points += 150 * timetaken;
+              coins = points * 0.05;
               console.log(timetaken.toFixed(2));
-              clearTimeout(test);
               setTimeout(newRound, 2000);
             } else {
               setTimeout(resetGame,3000);
@@ -34,10 +37,8 @@
               setTimeout($("#endscreen").text(coins.toFixed()),3000);
               $("#endscreen").show();
             }
-            
           }
           else {
-            clearTimeout(test);
             $(this).addClass("wrong");
             let options = document.getElementsByClassName("option");
             for (var i=0;i<options.length;i++){
@@ -65,16 +66,17 @@
       usedSongs.push(songs[songindex]);
       loadSong(songs[songindex]);
       audio.play();
-      let timeoutId = setTimeout(function(){
+      let timeout = setTimeout(function(){
           audio.pause();
       },
-      30000);
+      100000);
+
       //use algorithm to shuffle array and print out options with the correctAns included
-      let options = [songs[songindex]]; // create array called options with correct answer inside and push possible options so it can be printed to html
+      let options = [title[songindex]]; // create array called options with correct answer inside and push possible options so it can be printed to html
       while (options.length < 4) {
         let randomIndex = Math.floor(Math.random() * 8);
-        if (!options.includes(songs[randomIndex])) {
-          options.push(songs[randomIndex]);
+        if (!options.includes(title[randomIndex])) {
+          options.push(title[randomIndex]);
         }
       }
   
@@ -104,7 +106,7 @@
         songindex = Math.floor(Math.random() * 8);
     }
     // Change global variable correctAns
-    correctAns = songs[songindex];
+    correctAns = title[songindex];
     round++;
     resetGame();
     startGame(songindex);
