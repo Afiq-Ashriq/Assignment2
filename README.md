@@ -1,7 +1,7 @@
 Assignment 2: Guess-The-Song webgame
 By: Afiq Ashriq , Goh Jia Dong
 
-    This webpage project is a platform that revists old music classics through a series of kahoot-style games that ranges from different genres and difficulties. This project encourages user to be educated in pop-culture by rewarding in-game points that are exchangable for rewards and also scaling difficulties that excites competitive players.
+This webpage project is a platform that revists old music classics through a series of kahoot-style games that ranges from different genres and difficulties. This project encourages user to be educated in pop-culture by rewarding in-game points that are exchangable for rewards and also scaling difficulties that excites competitive players.
 
 The game: 
     5 different songs will be played, each time the user will have a time limit to pick the correct song
