@@ -10,7 +10,8 @@ This webpage project is a platform that revists old music classics through a ser
 ## DESIGN
 
 ## Process:
-
+    As a user, I would want the website to be easy to navigate.
+    As a user, I would want the website to have a nice look.
     As a user, i would want to be rewarded for advancing far into the webgame, so i want probably want a reward/achievement system.
     As a user, i want to be able to save my progress for the next time i log in, so i want to save my information somewhere.
     As a competitive user, i want the webgame to be progressive and challenging, so i want different 'levels' to the game.
