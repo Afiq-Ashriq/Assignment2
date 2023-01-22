@@ -5,7 +5,7 @@ This webpage project is a platform that revists old music classics through a ser
 
 ## The game: 
     5 different songs will be played, each time the user will have a time limit to pick the correct song
-    title. With each correct answer, points and coins will be awarded to redeem for items.
+    title. With each correct answer, points and coins will be awarded to redeem items.
 
 ## DESIGN
 
