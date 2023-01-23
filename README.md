@@ -16,6 +16,9 @@ Who is the website for: Our target audience for this webgame are individuals who
  - As a competitive user, i want the webgame to be progressive and challenging, so i want different 'levels' to the game.
 
 ## Features implemented:
+1. Basic game function (Loading, playing and guessing of songs)
+    
+    
 
 ## Features not yet implemented:
     1) User account create/log in (to store user data)
