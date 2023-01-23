@@ -7,9 +7,8 @@ This webpage project is a platform that revists old music classics through a ser
     5 different songs will be played, each time the user will have a time limit to pick the correct song
     title. With each correct answer, points and coins will be awarded to redeem items.
 
-## DESIGN
-
-## Process:
+## Design Process:
+    Who is the website for: My target audience is individuals who want to have fun and expand their music knowledege. This game will expose the users to different songs from different genres and timelines.
     As a user, I would want the website to be easy to navigate.
     As a user, I would want the website to have a nice look.
     As a user, i would want to be rewarded for advancing far into the webgame, so i want probably want a reward/achievement system.
