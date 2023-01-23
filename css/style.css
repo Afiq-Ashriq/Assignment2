@@ -1,3 +1,5 @@
+
+
 #time {
     font-size: 100px;
     
@@ -8,8 +10,16 @@
     flex-direction: column;
 }
 .song-button button {
+    border-radius: 20px;
+    border: solid 2px black;
     padding: 50px 50px;
     margin: 5px;
+    transition: all 200ms ease-out;
+}
+
+.song-button button:hover {
+    transition: all 200ms ease-in;
+    transform: scale(1.05);
 }
 
 .correct {

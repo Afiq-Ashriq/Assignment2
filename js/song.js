@@ -1,8 +1,5 @@
 
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});
   $(".song-button").hide();
   $("#endscreen").hide();
   let usedSongs = []
@@ -27,7 +24,7 @@ $.ajax(settings).done(function (response) {
             let timetaken = audio.currentTime;
             $(this).addClass("correct");
             if(round < rounds){
-              points += 150 * timetaken;
+              points += 150 - (timetaken * 5);
               coins = points * 0.05;
               console.log(timetaken.toFixed(2));
               setTimeout(newRound, 2000);
@@ -66,7 +63,7 @@ $.ajax(settings).done(function (response) {
       usedSongs.push(songs[songindex]);
       loadSong(songs[songindex]);
       audio.play();
-      let timeout = setTimeout(function(){
+      timeout = setTimeout(function(){
           audio.pause();
       },
       100000);
