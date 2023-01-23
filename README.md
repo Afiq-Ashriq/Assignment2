@@ -9,11 +9,11 @@ This webpage project is a platform that revists old music classics through a ser
 
 ## Design Process:
 Who is the website for: My target audience is individuals who want to have fun and expand their music knowledege. This game will expose the users to different songs from different genres and timelines.
-    As a user, I would want the website to be easy to navigate.
-    As a user, I would want the website to have a nice look.
-    As a user, i would want to be rewarded for advancing far into the webgame, so i want probably want a reward/achievement system.
-    As a user, i want to be able to save my progress for the next time i log in, so i want to save my information somewhere.
-    As a competitive user, i want the webgame to be progressive and challenging, so i want different 'levels' to the game.
+ - As a user, I would want the website to be easy to navigate.
+ - As a user, I would want the website to have a nice look.
+ - As a user, i would want to be rewarded for advancing far into the webgame, so i want probably want a reward/achievement system.
+ - As a user, i want to be able to save my progress for the next time i log in, so i want to save my information somewhere.
+ - As a competitive user, i want the webgame to be progressive and challenging, so i want different 'levels' to the game.
 
 ## Features implemented:
 
