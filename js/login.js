@@ -39,16 +39,13 @@ $("#signinsubmit").on("click",function(e){
             accountdata['email'] = email;
             accountdata['password'] = password;
             console.log("Log-in successful");
-<<<<<<< HEAD
             console.log(accountdata);
-=======
             //var date = new Date();
             //date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
             //var expires = "expires=" + date.toUTCString();
             //document.cookie = "session_id=12345;" + expires + ";path=/";
             // Redirect to index page
             window.location.href = '../html/gamehome.html';
->>>>>>> c3c5097f7fb3eb65e9664e8c149499ea7876c00d
             // window.location.href = "#" //redirect user to "homepage" after successful login
         }
         else 
