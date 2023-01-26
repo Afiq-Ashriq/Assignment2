@@ -6,32 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/gamehome.css">
+    <link href="../css/gamehome.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <!-- header goes here -->
-    <h2>Guess That Tune</h2>
-    <p>dkamwdadwaodawdoaokwdwadamawdmoawoimdawkmodawodawoamodawomwdomawdwoadwmaodwa</p>
-    <h3>play now!</h3>
-    <button>
-        <a href="html/login.html">Login</a>
-    </button>
-    <button>
-        <a href="html/signup.html">Register</a>
-    </button>
+    <div w3-include-html="../html/navBar.html"></div>
+    <div id="songs">
 
+    <h1>Guess the song</h1>
+    <div class="difficulty">
+        <h2>Difficulty</h2>
+        <input class="btn btn-primary" type="button" value="Easy">
+        <input class="btn btn-primary" type="button" value="Medium">
+        <input class="btn btn-primary" type="button" value="Hard">
+    </div>
+    <br>
+    <h2>Genres</h2>
+    <div class="genres">
+        <a href="../html/songpage.html">Genre 1</a>
+        <a href="../html/songpage.html">Genre 2</a>
+    </div>
 
     <!-- footer here -->
-    <footer>
-        <p>Website made by Afiq</p>
-    </footer>
-    <!--<div w3-include-html="html/footer.html"></div> -->
+    <div w3-include-html="../html/footer.html"></div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    <script src="song.js"></script>
-    <script src="index.js"></script>
+    <script src="../js/song.js"></script>
+    <script src="../index.js"></script>
     <script src="js/w3-include-HTML.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* Test Account: test@icle.com test12345 */
-
+$(".alert").hide()
 const apikey = "63b70aaf969f06502871aa9e";
 let login1 = false;
 let accountemail = null;
@@ -33,11 +33,18 @@ $("#signinsubmit").on("click",function(e){
             accountemail = email;
             accountpw = password;
             console.log("Log-in successful");
+            //var date = new Date();
+            //date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
+            //var expires = "expires=" + date.toUTCString();
+            //document.cookie = "session_id=12345;" + expires + ";path=/";
+            // Redirect to index page
+            window.location.href = '../html/gamehome.html';
             // window.location.href = "#" //redirect user to "homepage" after successful login
         }
         else 
         {
             console.log("Log-in unsuccessful");
+            $(".alert").fadeIn().delay(3000).fadeOut();
         }
     });
 });
