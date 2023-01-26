@@ -12,7 +12,8 @@ $("#signinsubmit").on("click",function(e){
 
     checkInfo();
 });
-checkInfo() {
+
+function checkInfo() {
     let settings = {
         "async": true,
         "crossDomain": true,
@@ -24,7 +25,6 @@ checkInfo() {
             "cache-control": "no-cache"
         },
     }
-
     $.ajax(settings).done(function (response) {
         for (var i = 0; i < response.length && i < limit; i++) {
             if (response[i].email == email && response[i].password == password)
