@@ -22,17 +22,18 @@ $("#signinsubmit").on("click",function(e){
         },
     }
     $.ajax(settings).done(function (response) {
-        for (var i = 0; i < response.length && i < limit; i++) {
+        for (var i = 0; i < response.length; i++) {
             if (response[i].email == email && response[i].password == password)
             {
                 login1 = true;
             }
         }
-        if (login1)
+        if (login1 == true)
         {
             accountemail = email;
             accountpw = password;
             console.log("Log-in successful");
+            // window.location.href = "#" //redirect user to "homepage" after successful login
         }
         else 
         {
