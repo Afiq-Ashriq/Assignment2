@@ -1,9 +1,15 @@
 /* Test Account: test@icle.com test12345 */
 
 const apikey = "63b70aaf969f06502871aa9e";
-let login1 = false;
+let login = false;
 let accountemail = null;
 let accountpw = null;
+
+let accountdata = {
+    "login" : login,
+    "email" : accountemail,
+    "password" : accountpw
+};
 
 $("#signinsubmit").on("click",function(e){
     e.preventDefault();
@@ -25,20 +31,23 @@ $("#signinsubmit").on("click",function(e){
         for (var i = 0; i < response.length; i++) {
             if (response[i].email == email && response[i].password == password)
             {
-                login1 = true;
+                accountdata['login'] = true;
             }
         }
-        if (login1 == true)
+        if (accountdata['login'] == true)
         {
-            accountemail = email;
-            accountpw = password;
+            accountdata['email'] = email;
+            accountdata['password'] = password;
             console.log("Log-in successful");
+            console.log(accountdata);
             // window.location.href = "#" //redirect user to "homepage" after successful login
         }
         else 
         {
             console.log("Log-in unsuccessful");
         }
+        let accountObjectString = JSON.stringify(accountdata);
+        localStorage.setItem("AccountData", accountObjectString);
     });
 });
 
