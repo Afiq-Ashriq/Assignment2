@@ -10,10 +10,6 @@ $("#signinsubmit").on("click",function(e){
     let email = $("#email-login").val();
     let password = $("#pw-login").val();
 
-    checkInfo();
-});
-
-function checkInfo() {
     let settings = {
         "async": true,
         "crossDomain": true,
@@ -43,7 +39,8 @@ function checkInfo() {
             console.log("Log-in unsuccessful");
         }
     });
-}
+});
+
 
 
     // var settings = {
