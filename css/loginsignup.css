@@ -1,0 +1,13 @@
+.btn-back {
+	padding: 13px 18px;
+	font-size: 15px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0);
+	color: blue;
+	border-style: none;
+}
+.btn-back:hover {
+	color: darkblue;
+	background-color: rgba(0, 0, 0, 0);
+	transition-duration: 0.25s;
+}
