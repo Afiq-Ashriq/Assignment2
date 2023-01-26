@@ -1,42 +1,46 @@
+  
 
-
+  const title = ['Toothache','Get Lucky','No One Knows','Africa','Billie Jean', "Livin' on a prayer", 'Take on me','Under Pressure'];
+  const songs = ['toothache','getlucky','nooneknows','africa','billiejean','livinonaprayer','takeonme','underpressure'];
+  let timeout;
+  let round = 1;
+  $(".homebtn").hide();
   $(".song-button").hide();
   $("#endscreen").hide();
-  let usedSongs = []
-  var points = 0
-  var coins = 0
+  let durationofsong = 10000;
+  let usedSongs = [];
+  var points = 0;
+  var coins = 0;
   const rounds = 5;
-  var songindex = Math.floor(Math.random() * 8);
-  const title = ['Caramelldansen','Toothache','Get Lucky','No One Knows','Africa','Billie Jean', "Livin' on a prayer", 'Take on me'];
-  const songs = ['caramelldansen','toothache','getlucky','nooneknows','africa','billiejean','livinonaprayer','takeonme'];
+  var songindex = Math.floor(Math.random() * songs.length);
   const audio = document.querySelector('#audio');
   let correctAns = title[songindex];
+  let htmlans;
   var timeleft = 5;
   $(document).ready(function() {
     var timerStart = setInterval(function(){
       if(timeleft <= 0){
         $("#time").hide();
-        let test = startGame(songindex);
+        startGame(songindex);
         $(".song-button").show();
         clearInterval(timerStart);
         $(".option").click(function(){
           if(this.innerHTML === correctAns){
+            clearTimeout(timeout);
             let timetaken = audio.currentTime;
+            points += 150 - (timetaken * 5);
+            coins = points * 0.05;
+            console.log(timetaken.toFixed(2));
             $(this).addClass("correct");
             if(round < rounds){
-              points += 150 - (timetaken * 5);
-              coins = points * 0.05;
-              console.log(timetaken.toFixed(2));
+              clearTimeout(timeout);
               setTimeout(newRound, 2000);
-            } else {
-              setTimeout(resetGame,3000);
-              $("#startbtn").hide()
-              setTimeout($("#endscreen").text(coins.toFixed()),3000);
-              $("#endscreen").show();
-            }
+            } 
+            
           }
           else {
             $(this).addClass("wrong");
+            clearTimeout(timeout);
             let options = document.getElementsByClassName("option");
             for (var i=0;i<options.length;i++){
               if (options[i].textContent === correctAns) {
@@ -46,11 +50,12 @@
             }
             setTimeout(newRound, 2000);
           }
+          //Disable other buttons when user clicks on one
           $(".option").not(this).prop("disabled",true);
         })
       }
       else {
-          $("#time").html(timeleft);
+          $("#time").html("Playing song in " + timeleft);
       }
       timeleft -= 1;
     }, 1000
@@ -60,18 +65,32 @@
 
 
     function startGame(songindex) {
+      if (round > rounds) {
+        endGame();
+        return true;
+      }
+      console.log(round);
       usedSongs.push(songs[songindex]);
       loadSong(songs[songindex]);
       audio.play();
       timeout = setTimeout(function(){
           audio.pause();
+          if (round <= rounds) {
+            $(".option").each(function() {
+              if ((this).innerHTML === correctAns) {
+                $(this).addClass('correct');
+                setTimeout(newRound,2000);
+              }
+            })
+            console.log("Timeout expired!");
+          }
       },
-      100000);
+      durationofsong);
 
       //use algorithm to shuffle array and print out options with the correctAns included
       let options = [title[songindex]]; // create array called options with correct answer inside and push possible options so it can be printed to html
       while (options.length < 4) {
-        let randomIndex = Math.floor(Math.random() * 8);
+        let randomIndex = Math.floor(Math.random() * songs.length);
         if (!options.includes(title[randomIndex])) {
           options.push(title[randomIndex]);
         }
@@ -86,6 +105,9 @@
       $("#btn2").text(options[1]);
       $("#btn3").text(options[2]);
       $("#btn4").text(options[3]);
+
+      //Show options when loaded
+      $(".song-button").show();
       
     }
 
@@ -96,19 +118,19 @@
     };
 
 
-    let round = 1;
+  
     function newRound() {
+    console.log("new");
+    round++;
+    clearTimeout(timeout);
     // To get new and different song check if it is inside usedSongs array
     while(usedSongs.includes(songs[songindex])){
-        songindex = Math.floor(Math.random() * 8);
+        songindex = Math.floor(Math.random() * songs.length);
     }
     // Change global variable correctAns
     correctAns = title[songindex];
-    round++;
     resetGame();
     startGame(songindex);
-    //To show options
-    $(".song-button").show();
     return songindex;
   };
   
@@ -125,7 +147,18 @@
     $("#btn4").text("");
   };
 
+  function endGame() {
+    resetGame();
+    clearTimeout(timeout);
+    $("#endscreen").text(coins.toFixed())
+    $("#endscreen").show();
+    $(".homebtn").show();
+  };
+
   })
+
+
+
 
 
 

@@ -1,4 +1,6 @@
-
+body {
+    margin: 0;
+}
 
 #time {
     font-size: 100px;
@@ -42,3 +44,18 @@
 
     
 }
+
+.highlight {
+    background-color: black;
+    
+}
+
+footer {
+    background-color: rgb(3, 58, 135);
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
