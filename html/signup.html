@@ -12,6 +12,13 @@
     <div class="container mt-5">
         <a href="../index.html"><button type="button" class="btn btn-primary btn-back">Return</button></a>
         <form>
+            <div class="alert alert-danger" role="alert" id="password-issue">
+                Password does not match. Try again.
+            </div>
+            <div class="alert alert-danger" role="alert" id="email-issue">
+                Email is already used. Try again
+            </div>
+
             <div class="row mb-3 justify-content-center"> <!-- https://mdbootstrap.com/docs/b4/jquery/utilities/horizontal-align/ -->
                 <div class="col-4">
                     <label for="email-login" class="form-label">Email address</label>
