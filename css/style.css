@@ -50,12 +50,8 @@ body {
     
 }
 
-footer {
-    background-color: rgb(3, 58, 135);
-    height: 200px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+#footer {
+    background-color: rgba(88, 88, 88, 0.2);
 }
 #navBarAcc {
     font-size: 1.05em;
