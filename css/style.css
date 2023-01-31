@@ -57,5 +57,11 @@ footer {
     position: absolute;
     bottom: 0;
 }
-
+#navBarAcc {
+    font-size: 1.05em;
+}
+#navBarAcc:hover {
+    color:rgb(3, 58, 135); /* remember to change */
+    transition-duration: 0.25s;
+}
 
