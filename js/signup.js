@@ -17,7 +17,7 @@ $("#signupsubmit").on("click",function(e){
     else
     {
         let newpassword = password;
-        let settings = {
+        let settingsGet = {
             "async": true,
             "crossDomain": true,
             "url": "https://interactivedev-ab73.restdb.io/rest/account",
@@ -28,14 +28,13 @@ $("#signupsubmit").on("click",function(e){
                 "cache-control": "no-cache"
             },
         }
-        $.ajax(settings).done(function (response) {
+        $.ajax(settingsGet).done(function (response) {
             for (var i = 0; i < response.length; i++) 
             {
                 let item = response[i].email;
                 existingemail.push(item);
             }
-        });
-        console.log(existingemail);
+            console.log(existingemail);
         
         if (existingemail.includes(email))
         {  
@@ -49,7 +48,7 @@ $("#signupsubmit").on("click",function(e){
                 "password" : newpassword,
                 "coins" : 0
             };
-            let settings = {
+            let settingsPost = {
                 "async": true,
                 "crossDomain": true,
                 "url": "https://interactivedev-ab73.restdb.io/rest/account",
@@ -66,10 +65,12 @@ $("#signupsubmit").on("click",function(e){
                 }
               
             };
-            $.ajax(settings).done(function (response) {
+            $.ajax(settingsPost).done(function (response) {
                 console.log("Account successfully created");
+                window.location.href = '../html/login.html';
             });
 
         }
+        });
     }
 });
