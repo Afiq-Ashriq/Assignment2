@@ -29,6 +29,8 @@ $("#signinsubmit").on("click",function(e){
     }
     $.ajax(settings).done(function (response) {
         for (var i = 0; i < response.length; i++) {
+            var userid = response[i]._id
+            console.log(response[i]._id)
             if (response[i].email == email && response[i].password == password)
             {
                 accountdata['login'] = true;
@@ -40,21 +42,18 @@ $("#signinsubmit").on("click",function(e){
             accountdata['password'] = password;
             console.log("Log-in successful");
             console.log(accountdata);
-            //var date = new Date();
-            //date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
-            //var expires = "expires=" + date.toUTCString();
-            //document.cookie = "session_id=12345;" + expires + ";path=/";
+            var date = new Date();
+            date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
+            var expires = "expires=" + date.toUTCString();
+            document.cookie = "name" + "=" + userid + ";" + expires + ";path=/";
             // Redirect to index page
             window.location.href = '../html/gamehome.html';
-            // window.location.href = "#" //redirect user to "homepage" after successful login
         }
         else 
         {
             console.log("Log-in unsuccessful");
             $(".alert").fadeIn().delay(3000).fadeOut();
         }
-        let accountObjectString = JSON.stringify(accountdata);
-        localStorage.setItem("AccountData", accountObjectString);
     });
 });
 

@@ -1,3 +1,9 @@
+function getCookie(){
+    alert(document.cookie);
+}
+
+console.log(getCookie());
+
 var difficulty = null;
 
 $(".btn").click(function() {

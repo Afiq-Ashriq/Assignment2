@@ -10,7 +10,6 @@
   let durationofsong = 10000;
   let usedSongs = [];
   var points = 0;
-  var coins = 0;
   const rounds = 5;
   var songindex = Math.floor(Math.random() * songs.length);
   const audio = document.querySelector('#audio');
@@ -29,7 +28,6 @@
             clearTimeout(timeout);
             let timetaken = audio.currentTime;
             points += 150 - (timetaken * 5);
-            coins = points * 0.05;
             console.log(timetaken.toFixed(2));
             $(this).addClass("correct");
             if(round < rounds){
@@ -150,7 +148,7 @@
   function endGame() {
     resetGame();
     clearTimeout(timeout);
-    $("#endscreen").text(coins.toFixed())
+    $("#endscreen").text(`Points: ${points.toFixed()}`)
     $("#endscreen").show();
     $(".homebtn").show();
   };
