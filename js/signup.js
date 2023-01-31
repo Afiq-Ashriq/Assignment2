@@ -46,7 +46,11 @@ $("#signupsubmit").on("click",function(e){
             let newaccountdata = {
                 "email" : email,
                 "password" : newpassword,
-                "coins" : 0
+                "easy-score" : 0,
+                "medium-score" : 0,
+                "hard-score" : 0,
+                "achievement1" : false
+
             };
             let settingsPost = {
                 "async": true,
