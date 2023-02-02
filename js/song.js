@@ -1,7 +1,7 @@
   
 
-  const title = ['Toothache','Get Lucky','No One Knows','Africa','Billie Jean', "Livin' on a prayer", 'Take on me','Under Pressure'];
-  const songs = ['toothache','getlucky','nooneknows','africa','billiejean','livinonaprayer','takeonme','underpressure'];
+  const title = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean', 'Losing My Religion', 'Take on me', 'Rock With You','Another One Bites the Dust'];
+  const songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
   let timeout;
   let round = 1;
   $(".homebtn").hide();
@@ -33,6 +33,9 @@
             if(round < rounds){
               clearTimeout(timeout);
               setTimeout(newRound, 2000);
+            }
+            else {
+              setTimeout(endGame, 2000);
             } 
             
           }
@@ -43,8 +46,9 @@
             for (var i=0;i<options.length;i++){
               if (options[i].textContent === correctAns) {
                 options[i].classList.add("correct");
-                break;
+
               }
+
             }
             setTimeout(newRound, 2000);
           }
@@ -74,11 +78,16 @@
       timeout = setTimeout(function(){
           audio.pause();
           if (round <= rounds) {
-            $(".option").each(function() {
+            $(".option").each(function() { //If user does not click any option within duration
               if ((this).innerHTML === correctAns) {
                 $(this).addClass('correct');
-                setTimeout(newRound,2000);
               }
+              else {
+                $(this).prop('disabled',true);
+              }
+              setTimeout(newRound,2000);
+
+
             })
             console.log("Timeout expired!");
           }
