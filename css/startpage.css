@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+#game-title {
+    font-size: 4em;
+    font-family: "Righteous", "Times New Roman";
+}
+#gameplaybtn {
+    font-size: 1.02em;
+    font-family: "Righteous", "Times New Roman";
+    color: blue;
+}
+#gameplaybtn:hover {
+    color: white;
+}
+
+
+.popupdisplay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    
+}
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+#loginbtn, #signupbtn {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+#loginbtn a, #signupbtn a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 950px){
+    .popup{
+        width: 70%;
+      }
+}
