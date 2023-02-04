@@ -1,6 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
 
 html, body {
@@ -13,12 +11,9 @@ div.background {
     display: flex;
     flex-direction: column;
 
-    background-color: rgb(42, 16, 65);
-    background-size: cover;
-    background-position: center;
-
     height: 100vh;
 }
+
 
 #game-title {
     color: whitesmoke;
@@ -68,11 +63,12 @@ div.background {
 .popup {
     margin: 70px auto;
     padding: 20px;
-    background-color: rgb(42, 16, 65);
+    background-color: rgb(48, 18, 74);
     border-radius: 5px;
     width: 30%;
     position: relative;
 
+    font-family: 'Source Code Pro', monospace;
     color: white;
 }
 .popup .content {
@@ -85,8 +81,7 @@ div.background {
     position: relative;
     bottom: 2px;
     left: 8px;
-
-    -webkit-filter: invert(100%);
+    filter: invert(100%);
     
 }
 #popupmessage {
@@ -108,7 +103,6 @@ div.background {
     margin-right: 10px;
     border-style: none;
     padding: 10px 20px;
-    border-radius: 5px;
     background: none;
 }
 #loginbtn a, #signupbtn a{
