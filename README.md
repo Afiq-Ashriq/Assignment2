@@ -35,7 +35,7 @@ We are haven't decided on the colour template of the website yet.
 ## TESTING
 
 ## CREDITS
-
+door-key.png - https://www.freepik.com
 ## Resources from:
 - To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
 - To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
