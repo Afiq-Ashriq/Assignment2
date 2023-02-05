@@ -1,5 +1,6 @@
   
-
+  var diff = sessionStorage.getItem("difficulty");
+  console.log(diff);
   const title = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean', 'Losing My Religion', 'Take on me', 'Rock With You','Another One Bites the Dust'];
   const songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
   let timeout;
@@ -7,7 +8,14 @@
   $(".homebtn").hide();
   $(".song-button").hide();
   $("#endscreen").hide();
-  let durationofsong = 10000;
+  let durationofsong = 30000;
+  if (diff == "Medium"){
+    durationofsong = 20000;
+  }
+  else if (diff == "Hard") {
+    durationofsong = 10000
+  }
+  console.log(durationofsong);
   let usedSongs = [];
   var points = 0;
   const rounds = 5;
@@ -120,7 +128,7 @@
 
     function loadSong(song) {
     
-      audio.src = `../music/${song}.mp3`
+      audio.src = `../music/80s/${song}.mp3`
   
     };
 
