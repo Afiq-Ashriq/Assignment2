@@ -26,7 +26,7 @@ We are haven't decided on the colour template of the website yet.
 
 ## Features not yet implemented:
     1) Achievement
-    2) 
+    2) Feedback
     3) 
     4) 
     5)

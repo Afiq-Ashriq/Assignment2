@@ -7,6 +7,9 @@ function getCookie(){
 var difficulty = null;
 
 $(".diffbtn").click(function() {
+    $(".diffbtn").css("color", "whitesmoke");
+    $(this).css("color", "red");
+
     difficulty = $(this).val();
     $(".diffbtn").not(this).addClass('highlight');
     $("#diffmsg").text(`You have selected ${difficulty}`);

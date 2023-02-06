@@ -11,22 +11,29 @@
 body {
     /* background-color: #011F5B; */
 
-    background-color: rgb(42, 16, 65);
+    background-image: linear-gradient(0deg, #44195e, #07002d);
     background-size: cover;
     background-position: center;
+    height: 100vh;
 }
 .navbar {
-    background-color: rgb(49, 18, 77);
+    background-color: rgba(255, 255, 255, 0.05);
     margin-bottom: 25px;
+    border: 1px solid rgb(200, 200, 200);
 }
 .navbar-brand {
     font-family: 'VT323', monospace;
     font-size: 1.5em;
-    color: black;
+    color: whitesmoke;
+}
+.navbar-brand:hover {
+    animation: shiftcolor 2s;
+    animation-iteration-count: infinite;
+    transform: translate3d(0, 0, 0);
 }
 #navitem {
     font-family: 'DotGothic16', sans-serif;
-    color: black;
+    color: grey;
     margin-left: 10px;
     margin-right: 10px;
     transition: transform .15s;
@@ -37,8 +44,56 @@ body {
     transition-duration: 0.15s;
 }
 .footer {
+    border-top: 1px solid rgba(100, 100, 100, 0.25);
     color: whitesmoke;
 }
+
+.popupdisplayfb {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+.popupfb {
+    margin: 70px auto;
+    padding: 20px;
+    background-color: rgb(48, 18, 74);
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+
+    font-family: 'Source Code Pro', monospace;
+    color: whitesmoke;
+}
+.popupfb .content {
+    max-height: 30%;
+    overflow: auto;
+}
+#popupmessage {
+    color: rgb(169, 169, 169);
+    text-align: left;
+}
+.popupfb .close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+@keyframes shiftcolor {
+    0% {color: crimson; transform: translate3d(-1px, 0, -0);}
+    20% {color: orange; transform: translate3d(2px, 0, 0);}
+    40% {color: goldenrod; transform: translate3d(-4px, 0, 0);}
+    60% {color: green; transform: translate3d(4px, 0, 0);}
+    80% {color: DarkBlue; transform: translate3d(-2px, 0, 0);}
+    100% {color: purple ; transform: translate3d(1px, 0, 0);}
+}
+
 @media screen and (max-width: 950px){
     .footer {
         font-size: 0.5em;

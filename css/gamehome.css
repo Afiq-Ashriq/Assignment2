@@ -1,5 +1,13 @@
-body {
-    color: black;
-}* {
-	font-family: 'Source Code Pro', monospace;
+.difficulty, .genres {
+    text-align: center;
+}
+.btn {
+    color: white;
+    background: none;
+    width: 90px;
+    height: 50px;
+}
+
+.difficulty button:hover {
+    transform: scale(1.02);
 }

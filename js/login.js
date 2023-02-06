@@ -1,14 +1,11 @@
 /* Test Account: test@icle.com test12345 */
 $(".alert").hide()
 const apikey = "63b70aaf969f06502871aa9e";
-let login = false;
-let accountemail = null;
-let accountpw = null;
 
 let accountdata = {
-    "login" : login,
-    "email" : accountemail,
-    "password" : accountpw
+    "login" : false,
+    "email" : null,
+    "password" : null
 };
 
 $("#signinsubmit").on("click",function(e){
@@ -42,6 +39,7 @@ $("#signinsubmit").on("click",function(e){
             accountdata['password'] = password;
             console.log("Log-in successful");
             console.log(accountdata);
+
             var date = new Date();
             date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
             var expires = "expires=" + date.toUTCString();
