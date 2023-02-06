@@ -102,15 +102,16 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
             $(".option").each(function() { //If user does not click any option within duration
               if ((this).innerHTML === correctAns) {
                 $(this).addClass('correct');
+                setTimeout(newRound,2000);
               }
               else {
                 $(this).prop('disabled',true);
               }
-              setTimeout(newRound,2000);
-
+              
 
             })
-            console.log("Timeout expired!");
+            
+            
           }
       },
       durationofsong);
