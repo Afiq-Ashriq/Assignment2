@@ -9,25 +9,37 @@
     <link href="../css/songpage.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h2>Guess That Tune</h2>
-    <div id="songs">
-
-        
+    <div id="loadingscreen">
+            <lottie-player src="https://assets2.lottiefiles.com/datafiles/Diiccbibc5RWV4v/data.json" background="transparent"  speed="0.8"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
     </div>
 
-    <audio id="audio" src=""></audio>
+    
+    <div id="mainpage" style="display: none;"> 
+    <h2>Guess That Tune</h2>
+    <div id="showpoints"></div>
+    <div id="songs"> </div>
+
+    
     <div id="time"></div>
     <div class="song-button">
+        <audio id="audio"  src=""></audio>
         <button class="option" id="btn1"></button>
         <button class="option" id="btn2"></button>
         <button class="option" id="btn3"></button>
         <button class="option" id="btn4"></button>
     </div>
 
-    <div id="endscreen"> </div>
-    <a class="homebtn"  href="../html/gamehome.html">
-        <button>Continue</button>
-    </a>
+    <div id = "endscreen">
+        <div id="endmsg"></div>
+    
+        <a class="homebtn"  href="../html/gamehome.html">
+                Continue
+        </a>
+
+    </div>
+
+
+    
 
 
 
