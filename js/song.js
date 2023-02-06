@@ -12,6 +12,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
   
   var diff = sessionStorage.getItem("difficulty");
   console.log(diff);
+  const Pop = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida'] 
   const title = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean', 'Losing My Religion', 'Take on me', 'Rock With You','Another One Bites the Dust'];
   const songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
   let timeout;
