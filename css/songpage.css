@@ -1,47 +1,74 @@
-body {
+* {
     margin: 0;
+    overflow: hidden;
 }
-
-#time {
-    font-size: 50px;
+.songbox {
+    height: 90%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    
+    align-items: center;
 }
-
+.time {
+    text-align: center;
+    font-size: 80px;
+}
 .song-button {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-
+    height: 85%;
+    width: 90%;
 }
-.song-button button {
-    background-image: linear-gradient(0deg, #44195e91, #07002d);
-    width: 60%;
+.song-button div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn1 {
+    background-color: rgba(255, 0, 0, 0.15);
+}
+#btn2 {
+    background-color: rgba(0, 128, 0, 0.15);
+}
+#btn3 {
+    background-color: rgba(0, 0, 255, 0.15);
+}
+#btn4 {
+    background-color: rgba(255, 255, 0, 0.15);
+}
+
+.song-button div button {
+    font-family: 'VT323', monospace;
+    font-size: 1.5em;
+    color: whitesmoke;
+
     border-radius: 20px;
-    border: solid 2px white;
-    padding: 30px 50px;
+    border: solid 2px whitesmoke;
+    /* padding: 150px 150px; */
     margin: auto;
+    height: 88%;
+    width: 88%;
     transition: all 200ms ease-out;
 }
 
-.song-button button:hover {
+.song-button div button:hover {
     transition: all 200ms ease-in;
     transform: scale(1.05);
 }
 
 .correct {
-    background-color: green;
-    
-
+    background-color: green !important;
 }
 
 .wrong {
-    background-color: red;
+    background-color: red !important;
+}
+#showpoints {
+    color: whitesmoke;
+    font-family: 'VT323', monospace;
+    font-size: 1.55em;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-#startbtn {
+/* #startbtn {
     width: 400px;
     height: 400px;
     background-color: yellow;
@@ -51,13 +78,13 @@ body {
     scale: 1.5;
 
     
-}
+} */
 
-.highlight {
+/* .highlight {
     background-color: black;
     
-}
-
+} */
+/* 
 #footer {
     background-color: rgba(88, 88, 88, 0.2);
 }
@@ -65,10 +92,10 @@ body {
     font-size: 1.05em;
 }
 #navBarAcc:hover {
-    color:rgb(3, 58, 135); /* remember to change */
+    color:rgb(3, 58, 135);
     transition-duration: 0.25s;
 }
-
+ */
 
 #loadingscreen {
     display: flex;
@@ -76,14 +103,28 @@ body {
     justify-content: center;
     height: 100vh;
     z-index: 1;
-
 }
+#endmsg {
+    color: whitesmoke;
+    font-family: 'VT323', monospace;
+    font-size: 4em;
+}
+.homebtn {
+    text-decoration: none;
+    text-align: center;
 
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1.5em;
+}
+.homebtn:hover {
+    color: rgb(255, 74, 19);
+    transition-duration: 0.25s;
+}
 #endscreen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding: 10px;
-    margin: auto;
-    background-color: grey;
-    width: 100px;
-    height: 200px;
-    
 }
+
+

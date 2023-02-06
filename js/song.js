@@ -77,7 +77,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
         })
       }
       else {
-          $("#time").html("Playing song in " + timeleft);
+          $("#time").html(timeleft);
       }
       timeleft -= 1;
     }, 1000
@@ -182,6 +182,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
     clearTimeout(timeout);
     $("#endmsg").text(`Points: ${points.toFixed()}`)
     $("#endscreen").show();
+    $("#showpoints").hide();
     $(".homebtn").show();
   };
 

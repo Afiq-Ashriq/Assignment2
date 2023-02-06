@@ -30,13 +30,16 @@
 #hdif {
     font-family: 'Metal Mania', cursive;
 }
-#hdif:hover {
+#hdif:hover  {
     animation: hardshake 0.5s;
     animation-iteration-count: 1;
     transform: translate3d(0, 0, 0);
 }
 .genres a {
-    color: white;
+    font-family: 'VT323', monospace;
+    font-size: 1.4em;
+
+    color: whitesmoke;
     text-decoration: none;
     margin: 5px;
     padding: 15px 20px;

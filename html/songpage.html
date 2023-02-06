@@ -10,35 +10,34 @@
     <link href="../css/songpage.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="loadingscreen">
-            <lottie-player src="https://assets2.lottiefiles.com/datafiles/Diiccbibc5RWV4v/data.json" background="transparent"  speed="0.8"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+<div id="loadingscreen">
+        <lottie-player src="https://assets2.lottiefiles.com/datafiles/Diiccbibc5RWV4v/data.json" background="transparent"  speed="0.8"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+</div>
+
+<div id="showpoints"></div>
+<audio id="audio"  src=""></audio>
+
+<div class="container songbox">
+    <div class="time" id="time"></div> 
+    <div class="song-button row">
+        <div class="col-6">
+            <button class="option" id="btn1"></button>
+        </div>
+        <div class="col-6">
+            <button class="option" id="btn2"></button>
+        </div>
+        <div class="col-6">
+            <button class="option" id="btn3"></button>
+        </div>
+        <div class="col-6">
+            <button class="option" id="btn4"></button>
+        </div>
     </div>
-
-    
-    <div id="mainpage" style="display: none;"> 
-    <h2>Guess That Tune</h2>
-    <div id="showpoints"></div>
-    <div id="songs"> </div>
-
-    
-    <div id="time"></div>
-    <div class="song-button">
-        <audio id="audio"  src=""></audio>
-        <button class="option" id="btn1"></button>
-        <button class="option" id="btn2"></button>
-        <button class="option" id="btn3"></button>
-        <button class="option" id="btn4"></button>
-    </div>
-
-    <div id = "endscreen">
+    <div id ="endscreen">
         <div id="endmsg"></div>
-    
-        <a class="homebtn"  href="../html/gamehome.html">
-                Continue
-        </a>
-
+        <a class="homebtn"  href="../html/gamehome.html">Return</a>
     </div>
-
+</div>
 
     
 
@@ -46,12 +45,12 @@
 
 
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    <script src="../index.js"></script>
-    <script src="../js/song.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="../index.js"></script>
+<script src="../js/song.js"></script>
     
 </body>
 </html>
