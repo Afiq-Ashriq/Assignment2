@@ -11,7 +11,7 @@ div.background {
     display: flex;
     flex-direction: column;
 
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 
@@ -21,6 +21,10 @@ div.background {
     text-align: center;
     font-size: 7em;
     font-family: 'VT323', monospace;    
+}
+#game-title:hover {
+    animation: shiftcolor 2s;
+    animation-iteration-count: infinite;
 }
 #game-about {
     text-align: center;
