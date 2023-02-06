@@ -2,16 +2,17 @@ function getCookie(){
     alert(document.cookie);
 }
 
-console.log(getCookie());
 
 
 var difficulty = null;
 
-$(".btn").click(function() {
+$(".diffbtn").click(function() {
     difficulty = $(this).val();
-    $(".btn").not(this).addClass('highlight')
+    $(".diffbtn").not(this).addClass('highlight');
+    $("#diffmsg").text(`You have selected ${difficulty}`);
+    $("#diffmsg").fadeIn().delay(2000).fadeOut();
     console.log(difficulty);
-    sessionStorage.setItem("difficulty",difficulty)
+    sessionStorage.setItem("difficulty",difficulty);
 })
 
 

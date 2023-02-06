@@ -4,6 +4,9 @@ body {
 
 #time {
     font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 
@@ -62,4 +65,23 @@ body {
 #navBarAcc:hover {
     color:rgb(3, 58, 135); /* remember to change */
     transition-duration: 0.25s;
+}
+
+
+#loadingscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    z-index: 1;
+
+}
+
+#endscreen {
+    padding: 10px;
+    margin: auto;
+    background-color: grey;
+    width: 100px;
+    height: 200px;
+    
 }

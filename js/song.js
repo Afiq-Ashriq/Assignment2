@@ -1,3 +1,14 @@
+  function preloader() {
+    setTimeout(showPage,3000);
+  }
+  preloader();
+$("#showpoints").text(`Points: ${points.toFixed()}`)
+
+
+  function showPage() {
+    $("#mainpage").show();
+    $("#loadingscreen").hide();
+
   
   var diff = sessionStorage.getItem("difficulty");
   console.log(diff);
@@ -24,7 +35,7 @@
   let correctAns = title[songindex];
   let htmlans;
   var timeleft = 5;
-  $(document).ready(function() {
+  
     var timerStart = setInterval(function(){
       if(timeleft <= 0){
         $("#time").hide();
@@ -79,10 +90,12 @@
         endGame();
         return true;
       }
+      $("#showpoints").text(`Points: ${points.toFixed()}`)
       console.log(round);
       usedSongs.push(songs[songindex]);
       loadSong(songs[songindex]);
       audio.play();
+      audio.volume = 0.4;
       timeout = setTimeout(function(){
           audio.pause();
           if (round <= rounds) {
@@ -165,12 +178,14 @@
   function endGame() {
     resetGame();
     clearTimeout(timeout);
-    $("#endscreen").text(`Points: ${points.toFixed()}`)
+    $("#endmsg").text(`Points: ${points.toFixed()}`)
     $("#endscreen").show();
     $(".homebtn").show();
   };
 
-  })
+  
+
+}
 
 
 

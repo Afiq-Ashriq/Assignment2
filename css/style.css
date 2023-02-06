@@ -6,7 +6,9 @@
     color: whitesmoke;
 }
 body {
-    background-color: rgb(42, 16, 65);
+    background-color: #011F5B;
+
+    /*background-color: rgb(42, 16, 65);*/
     background-size: cover;
     background-position: center;
 }

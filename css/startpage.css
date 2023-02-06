@@ -30,7 +30,8 @@ div.background {
 #gameplaybtn {
     font-size: 7em;
     font-family: 'VT323', monospace;
-    color: rgb(254, 80, 0);
+    color: rgb(0, 128, 255);
+    /*color: rgb(254, 80, 0);*/
     animation: bounce 1s;
     animation-direction: alternate;  
     animation-iteration-count: infinite;
