@@ -39,6 +39,44 @@ body {
 .footer {
     color: whitesmoke;
 }
+
+.popupdisplayfb {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+.popupfb {
+    margin: 70px auto;
+    padding: 20px;
+    background-color: rgb(48, 18, 74);
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+
+    font-family: 'Source Code Pro', monospace;
+    color: whitesmoke;
+}
+.popupfb .content {
+    max-height: 30%;
+    overflow: auto;
+}
+#popupmessage {
+    color: rgb(169, 169, 169);
+    text-align: left;
+}
+.popupfb .close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
 @media screen and (max-width: 950px){
     .footer {
         font-size: 0.5em;

@@ -52,6 +52,16 @@ div.background {
 
 
 
+
+#accountimg {
+    height: 19px;
+    width: 19px;
+    position: relative;
+    bottom: 2px;
+    left: 8px;
+    filter: invert(100%);
+    
+}
 .popupdisplay {
     display: none;
     position: fixed;
@@ -70,20 +80,11 @@ div.background {
     position: relative;
 
     font-family: 'Source Code Pro', monospace;
-    color: white;
+    color: whitesmoke;
 }
 .popup .content {
     max-height: 30%;
     overflow: auto;
-}
-#accountimg {
-    height: 19px;
-    width: 19px;
-    position: relative;
-    bottom: 2px;
-    left: 8px;
-    filter: invert(100%);
-    
 }
 #popupmessage {
     color: rgb(169, 169, 169);
