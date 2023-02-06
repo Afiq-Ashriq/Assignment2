@@ -17,10 +17,6 @@ $(".diffbtn").click(function() {
     console.log(difficulty);
     sessionStorage.setItem("difficulty",difficulty);
 })
-$(".genrebtn").click(function() {
-    $(".genrebtn").css("color", "whitesmoke");
-    $(this).css("color", "red");
-})
 
 
 
