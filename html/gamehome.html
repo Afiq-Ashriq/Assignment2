@@ -10,25 +10,36 @@
     <link href="../css/gamehome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div w3-include-html="../html/navBar.html"></div>
-    <div id="songs">
+<div w3-include-html="../html/navBar.html"></div>
 
-        <h1>Guess That Tune</h1>
-        <div class="difficulty">
-            <h2>Difficulty</h2>
-            <button class = "diffbtn" type="button" value="Easy"> Easy</button>
-            <button class= "diffbtn"  type="button" value="Medium"> Medium</button>
-            <button class= "diffbtn" type="button" value="Hard"> Hard</button>
-        <div id="diffmsg"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 d-flex justify-content-center">
+            <div class="difficulty">
+                <h2>Difficulty</h2>
+                <button class = "btn diffbtn" id="edif" type="button" value="Easy">Easy</button>
+                <button class= "btn diffbtn" id="mdif"  type="button" value="Medium">Medium</button>
+                <button class= "btn diffbtn" id="hdif" type="button" value="Hard">Hard</button>
+                <div id="diffmsg"></div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="genres">
+                <h2>Genres</h2>
+                <button class = "btn genrebtn" id="g1" type="button" value="genre1">Genre 1</button>
+                <button class= "btn genrebtn" id="g2"  type="button" value="genre2">Genre 2</button>
+            </div>
+        </div>
     </div>
-    
-    <h2>Genres</h2>
-    <div class="genres">
-        <a href="../html/songpage.html">Genre 1</a>
-        <a href="../html/songpage.html">Genre 2</a>
-    </div>
+    <div class="row">
+        <div class="diffdisplay">
 
-    <!-- footer here -->
+        </div>
+        <div class="genredisplay">
+
+        </div>
+    </div>
+</div>
     <div w3-include-html="../html/footer.html"></div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
