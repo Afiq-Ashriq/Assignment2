@@ -1,6 +1,4 @@
-
 $(".alert").hide();
-
 
 $("#fbsubmit").on("click", function(e){
     e.preventDefault();
