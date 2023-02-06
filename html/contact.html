@@ -10,11 +10,41 @@
 </head>
 <body>
     <div w3-include-html="../html/navBar.html"></div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+    </div>
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-center my-5">
+            <h3>We would love your feedback!</h3>
+        </div>
+        <form>
+            <div class="row justify-content-center mb-3">
+                <div class="col-3">
+                    <label for="fbname" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="fbname" required>
+                </div>
+                <div class="col-4">
+                    <label for="fbemail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="fbemail" placeholder="name@example.com" required>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-7">
+                    <label for="fbtextarea">Feedback</label>
+                    <textarea class="form-control" id="fbtextarea" placeholder="Let us know what you think!" rows="3" required></textarea>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center mt-3">
+                <button type="submit" class="btn btn-primary" id="fbsubmit">Submit</button>
+            </div>
+        </form>
+    </div>
     <div w3-include-html="../html/footer.html"></div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <scirpt src="../js/feedback.js"></scirpt>
     <script src="../js/w3-include-HTML.js"></script>
 </body>
 </html>
