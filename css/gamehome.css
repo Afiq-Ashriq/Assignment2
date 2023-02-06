@@ -8,6 +8,15 @@
     height: 50px;
 }
 
+.genres a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px white solid;
+    border-radius: 2px;
+}
+
 .difficulty button:hover {
     transform: scale(1.02);
 }
