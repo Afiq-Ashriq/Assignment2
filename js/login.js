@@ -26,10 +26,11 @@ $("#signinsubmit").on("click",function(e){
     }
     $.ajax(settings).done(function (response) {
         for (var i = 0; i < response.length; i++) {
-            var userid = response[i]._id
             console.log(response[i]._id)
             if (response[i].email == email && response[i].password == password)
             {
+                 var userid = response[i]._id;
+
                 accountdata['login'] = true;
             }
         }
