@@ -1,3 +1,23 @@
+const apikey = "63b70aaf969f06502871aa9e";
+let id = getCookie("name");
+
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+  
   function preloader() {
     setTimeout(showPage,3000);
   }
@@ -30,7 +50,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
   console.log(durationofsong);
   let usedSongs = [];
   var points = 0;
-  const rounds = 5;
+  const rounds = 2;
   var songindex = Math.floor(Math.random() * songs.length);
   const audio = document.querySelector('#audio');
   let correctAns = title[songindex];
@@ -50,6 +70,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
             points += 150 - (timetaken * 5);
             console.log(timetaken.toFixed(2));
             $(this).addClass("correct");
+            $(this).prop("disabled",true);
             if(round < rounds){
               clearTimeout(timeout);
               setTimeout(newRound, 2000);
@@ -88,6 +109,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
 
     function startGame(songindex) {
       if (round > rounds) {
+        updateForm(id,easy);
         endGame();
         return true;
       }
@@ -103,6 +125,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
             $(".option").each(function() { //If user does not click any option within duration
               if ((this).innerHTML === correctAns) {
                 $(this).addClass('correct');
+                $(this).prop('disabled',true);
                 setTimeout(newRound,2000);
               }
               else {
@@ -185,6 +208,16 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
     $("#showpoints").hide();
     $(".homebtn").show();
   };
+
+
+
+
+
+
+
+
+
+  
 
   
 
