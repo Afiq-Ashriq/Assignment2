@@ -19,6 +19,9 @@
 
     font-size: 1.45em;
 }
+#edif {
+    color: rgb(255, 74, 19);
+}
 #mdif {
     font-family: 'Underdog', cursive;
 }
