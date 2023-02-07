@@ -7,11 +7,24 @@
     background: none;
 }
 #backbtn a{
+	color: whitesmoke;
 	text-decoration: none;
 }
-
-#backbtnk:hover {
-	color: darkblue;
-	background-color: rgba(0, 0, 0, 0);
+#backbtn a:hover {
+	color: rgb(75, 75, 75);
 	transition-duration: 0.25s;
+}
+#signinsubmit, #signupsubmit{
+    color: rgb(75, 75, 75);
+    background-color: #05baba;
+}
+#signinsubmit:hover, #signupsubmit:hover{
+    color: whitesmoke;
+    background-color: #039c9c;
+}
+#accountalt {
+	color: whitesmoke;
+}
+#accountalt:hover {
+	color: rgb(75, 75, 75);
 }

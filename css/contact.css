@@ -1,0 +1,14 @@
+.alert {
+    width: 90%;
+}
+.feedbackform {
+    font-family: 'Source Code Pro', monospace;
+}
+.btn {
+    color: rgb(75, 75, 75);
+    background-color: #05baba;
+}
+.btn:hover {
+    color: whitesmoke;
+    background-color: #039c9c;
+}
