@@ -1,5 +1,9 @@
 * {
 	font-family: 'Source Code Pro', monospace;
+	overflow: hidden;
+}
+.container {
+	height: 100vh;
 }
 #backbtn {
     border-style: none;
