@@ -1,6 +1,8 @@
 const apikey = "63b70aaf969f06502871aa9e";
 let id = getCookie("name");
-var easy = 0;
+let currentEscore;
+let currentMscore;
+let currentHscore;
 
 
 function getCookie(cname) {
@@ -23,18 +25,20 @@ function getCookie(cname) {
     setTimeout(showPage,3000);
   }
   preloader();
+   //$("#showpoints").text(`Points: ${points.toFixed()}`)
 
 
   function showPage() {
     $("#mainpage").show();
     $("#loadingscreen").hide();
 
-  
+  var genre = sessionStorage.getItem("genre");
+  console.log(genre);
+  const songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
   var diff = sessionStorage.getItem("difficulty");
   console.log(diff);
   const Pop = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida'] 
   const title = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean', 'Losing My Religion', 'Take on me', 'Rock With You','Another One Bites the Dust'];
-  const songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
   let timeout;
   let round = 1;
   $(".homebtn").hide();
@@ -50,7 +54,7 @@ function getCookie(cname) {
   console.log(durationofsong);
   let usedSongs = [];
   var points = 0;
-  const rounds = 2;
+  const rounds = 5;
   var songindex = Math.floor(Math.random() * songs.length);
   const audio = document.querySelector('#audio');
   let correctAns = title[songindex];
@@ -82,11 +86,13 @@ function getCookie(cname) {
           }
           else {
             $(this).addClass("wrong");
+            $(this).prop("disabled",true);
             clearTimeout(timeout);
             let options = document.getElementsByClassName("option");
             for (var i=0;i<options.length;i++){
               if (options[i].textContent === correctAns) {
                 options[i].classList.add("correct");
+                
 
               }
 
@@ -200,8 +206,8 @@ function getCookie(cname) {
   };
 
   function endGame() {
-    updatePb(id);
     resetGame();
+    getUserData();
     clearTimeout(timeout);
     $("#endmsg").text(`Points: ${points.toFixed()}`)
     $("#endscreen").show();
@@ -210,26 +216,66 @@ function getCookie(cname) {
   };
 
 
+  function updateForm(id,email,pw,escore,mscore,hscore,aone) {
+    var jsondata = {"email": email, "password": pw, "easyscore": escore, "mediumscore": mscore, "hardscore": hscore,"achievement1": aone};
+    let settingsPut = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://interactivedev-ab73.restdb.io/rest/account/${id}`,
+        "method": "PUT",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": apikey,
+          "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(jsondata),
 
-function updatePb(id) {
-  var jsondata = {"easyscore": "100"};
-  var settings = {
+      
+    };
+    $.ajax(settingsPut).done(function (response) {
+        console.log(response);
+        console.log("success");
+    });
+}
+
+
+function getUserData() {
+  let settingsGet = {
     "async": true,
     "crossDomain": true,
     "url": `https://interactivedev-ab73.restdb.io/rest/account/${id}`,
-    "method": "PUT",
+    "method": "GET",
     "headers": {
-      "content-type": "application/json",
-      "x-apikey": apikey,
-      "cache-control": "no-cache"
+        "content-type": "application/json",
+        "x-apikey": apikey,
+        "cache-control": "no-cache"
     },
-    "processData": false,
-    "data": JSON.stringify(jsondata)
-  }
+}
+$.ajax(settingsGet).done(function (response) {
 
-  $.ajax(settings).done(function (response) {
     console.log(response);
-  });
+    let pw = response.password
+    let email = response.email
+    let escore = response.easyscore;
+    let mscore = response.mediumscore;
+    let hscore = response.hardscore;
+    let aone = response.achievement1;
+    if (currentEscore > escore && diff == "Easy"){
+      escore = currentEscore;
+      updateForm(id,email,pw,escore,mscore,hscore,aone)
+    }
+    else if (currentMscore > mscore && diff == "Medium"){
+      mscore = currentMscore;
+      updateForm(id,email,pw,escore,mscore,hscore,aone)
+    }
+    else if (currentHscore > hscore && diff == "Hard") {
+      hscore = currentHscore;
+      updateForm(id,email,pw,escore,mscore,hscore,aone)
+    }
+
+
+});
 }
 
 

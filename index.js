@@ -5,6 +5,7 @@ function getCookie(){
 
 
 var difficulty = null;
+var genre = null;
 
 $(".diffbtn").click(function() {
     $(".diffbtn").css("color", "whitesmoke");
@@ -16,6 +17,13 @@ $(".diffbtn").click(function() {
     $("#diffmsg p").fadeIn().delay(2000).fadeOut();
     console.log(difficulty);
     sessionStorage.setItem("difficulty",difficulty);
+})
+
+$(".gbtn").click(function(){
+    genre = $(this).text();
+    console.log(genre);
+    sessionStorage.setItem("genre",genre)
+
 })
 
 

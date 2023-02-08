@@ -9,3 +9,5 @@ $("#gameplaybtn").on("click",function(e){
 $("#popupclose").on("click",function(e){
     $(".popupdisplay").css("display", "none");
 })
+
+
