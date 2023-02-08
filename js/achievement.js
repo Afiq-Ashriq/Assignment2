@@ -1,11 +1,11 @@
 const apikey = "63b70aaf969f06502871aa9e";
 
 let id = getCookie("name");
-console.log(id);
-let easy = 0;
+let achievementone = false;
+
+$(".achone").hide();
 
 $(document).ready(function(){
-    console.log("TEST");
     let settings = {
         "async": true,
         "crossDomain": true,
@@ -18,15 +18,17 @@ $(document).ready(function(){
         },
     }
     $.ajax(settings).done(function (response) {
-
-        console.log(response);
         
-        easy = response["easy-score"];
+        achievementone = response["achievement1"];
 
-
+        /* Check for achievement 1 */
+        if (achievementone == true)
+        {
+            $(".achone").show();
+            $(".achempty").hide();
+        }
     });
 })
-
 
 function getCookie(cname) {
     let name = cname + "=";

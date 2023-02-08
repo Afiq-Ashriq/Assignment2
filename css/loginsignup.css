@@ -1,5 +1,9 @@
 * {
 	font-family: 'Source Code Pro', monospace;
+	overflow: hidden;
+}
+.container {
+	height: 100vh;
 }
 #backbtn {
     border-style: none;
@@ -14,7 +18,7 @@
 	color: rgb(75, 75, 75);
 	transition-duration: 0.25s;
 }
-#signinsubmit, #signupsubmit{
+#signinsubmit, #signupsubmit, #updatesubmit{
     color: rgb(75, 75, 75);
     background-color: #05baba;
 }

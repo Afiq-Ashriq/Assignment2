@@ -11,7 +11,7 @@
 </head>
 <body>
     <div w3-include-html="../html/navBar.html"></div>
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center alertbox">
         <div class="alert alert-success" role="alert">Feedback submitted! Thank you</div>
     </div>
     <div class="d-flex align-items-center justify-content-center my-5">
@@ -20,17 +20,17 @@
     <div class="container-fluid">
         <form class="feedbackform">
             <div class="row justify-content-center mb-3">
-                <div class="col-3">
+                <div class="col-4 col-sm-5 col-md-4">
                     <label for="fbname" class="form-label">Name</label>
                     <input type="text" class="form-control" id="fbname" required>
                 </div>
-                <div class="col-4">
-                    <label for="fbemail" class="form-label">Email address</label>
+                <div class="col-7 col-sm-6 col-md-5">
+                    <label for="fbemail" class="form-label">Email</label>
                     <input type="email" class="form-control" id="fbemail" placeholder="name@example.com" required>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-7">
+                <div class="col-11 col-sm-11 col-md-9">
                     <label for="fbtextarea">Feedback</label>
                     <textarea class="form-control" id="fbtextarea" placeholder="Let us know what you think!" rows="3" required></textarea>
                 </div>
