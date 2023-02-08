@@ -1,5 +1,6 @@
 const apikey = "63b70aaf969f06502871aa9e";
 let id = getCookie("name");
+var easy = 0;
 
 
 function getCookie(cname) {
@@ -22,7 +23,6 @@ function getCookie(cname) {
     setTimeout(showPage,3000);
   }
   preloader();
-$("#showpoints").text(`Points: ${points.toFixed()}`)
 
 
   function showPage() {
@@ -109,7 +109,6 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
 
     function startGame(songindex) {
       if (round > rounds) {
-        updateForm(id,easy);
         endGame();
         return true;
       }
@@ -201,6 +200,7 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
   };
 
   function endGame() {
+    updatePb(id);
     resetGame();
     clearTimeout(timeout);
     $("#endmsg").text(`Points: ${points.toFixed()}`)
@@ -211,9 +211,26 @@ $("#showpoints").text(`Points: ${points.toFixed()}`)
 
 
 
+function updatePb(id) {
+  var jsondata = {"easyscore": "100"};
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": `https://interactivedev-ab73.restdb.io/rest/account/${id}`,
+    "method": "PUT",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": apikey,
+      "cache-control": "no-cache"
+    },
+    "processData": false,
+    "data": JSON.stringify(jsondata)
+  }
 
-
-
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
 
 
 
