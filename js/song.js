@@ -29,7 +29,10 @@ var diff = sessionStorage.getItem("difficulty");
   songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
   }
   else if (genre == "Pop") {
-  songs = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida','Deeper Understanding','Virtual Insanity','Space Cowboy']; 
+  songs = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida','Deeper Understanding','Virtual Insanity','Space Cowboy','Space Song']; 
+  }
+  else if (genre == "K-Pop"){
+    songs = ['OMG','Tick Tick Boom','Back Down','CROWN','Underwater','MORE']
   }
   console.log(genre);
   console.log(diff);
@@ -257,6 +260,7 @@ $.ajax(settingsGet).done(function (response) {
     $("#loadingscreen").hide();
 
     console.log(response);
+    let content = "" 
     pw = response.password
     email = response.email
     escore = response.easyscore;
@@ -268,7 +272,12 @@ $.ajax(settingsGet).done(function (response) {
       escore = currentEscore;
       updateForm(id,email,pw,escore,mscore,hscore,aone)
       }
-      $("#endmsg").text(`Points: ${points.toFixed()} \n Personal Best: ${escore}`)
+      content = `${content}<tr>
+      <td>Points: ${points.toFixed()}</td></tr>
+      <tr><td>Personal Best: ${escore}</td></tr>
+      `;
+      $("#endmsg").html(content);
+
     }
     else if (diff == "Medium"){
       if (currentMscore > mscore){
