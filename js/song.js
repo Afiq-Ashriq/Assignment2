@@ -51,7 +51,7 @@ var diff = sessionStorage.getItem("difficulty");
     durationofsong = 20000;
   }
   else if (diff == "Hard") {
-    durationofsong = 10000
+    durationofsong = 5000
   }
   console.log(durationofsong);
   let usedSongs = [];
@@ -74,7 +74,7 @@ var diff = sessionStorage.getItem("difficulty");
             numOfcorrect ++;
             clearTimeout(timeout);
             let timetaken = audio.currentTime;
-            points += 150 - (timetaken * 5);
+            points += 200 - (timetaken * 10);
             console.log(timetaken.toFixed(2));
             $(this).addClass("correct");
             $(this).prop("disabled",true);
