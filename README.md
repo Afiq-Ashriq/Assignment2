@@ -15,7 +15,8 @@ Who is the website for: Our target audience for this webgame are individuals who
  - As a user, i want to be able to save my progress for the next time i log in, so i want to save my information somewhere.
  - As a competitive user, i want the webgame to be progressive and challenging, so i want different 'levels' to the game.
 
-We are haven't decided on the colour template of the website yet.
+design rationale
+- We chose purple as it fits in with who we want our audience to be. We want our game to be played by anyone not only children so purple is a perfect colour for us. Our purple is a mix of light and dark, if it were other colours it would either look too boring or too kiddish.
 
 
 ## Features implemented:
