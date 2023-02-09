@@ -50,5 +50,5 @@ Loading animation - https://lottiefiles.com/3042-loading
 - To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
 - To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 - setTimeout syntax https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
-
+- Fisher-Yates algorithm used for shuffling songs in array.  https://bost.ocks.org/mike/shuffle/
 All the songs:
