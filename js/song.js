@@ -3,23 +3,15 @@ let id = getCookie("name");
 let currentEscore;
 let currentMscore;
 let currentHscore;
+let pw;
+let email;
+let escore;
+let mscore;
+let hscore;
+let aone;
+var diff = sessionStorage.getItem("difficulty");
 
 
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
   
   function preloader() {
     setTimeout(showPage,3000);
@@ -31,14 +23,16 @@ function getCookie(cname) {
   function showPage() {
     $("#mainpage").show();
     $("#loadingscreen").hide();
-
+  var songs;
   var genre = sessionStorage.getItem("genre");
+  if (genre == "80s") {
+  songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
+  }
+  else if (genre == "Pop") {
+  songs = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida','Deeper Understanding','Virtual Insanity','Space Cowboy']; 
+  }
   console.log(genre);
-  const songs = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean','Losing My Religion','Take on Me', 'Rock With You','Another One Bites the Dust'];
-  var diff = sessionStorage.getItem("difficulty");
   console.log(diff);
-  const Pop = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida'] 
-  const title = ['Bohemian Rhapsody','Down Under','Karma Chameleon','Africa','Billie Jean', 'Losing My Religion', 'Take on me', 'Rock With You','Another One Bites the Dust'];
   let timeout;
   let round = 1;
   $(".homebtn").hide();
@@ -57,7 +51,7 @@ function getCookie(cname) {
   const rounds = 5;
   var songindex = Math.floor(Math.random() * songs.length);
   const audio = document.querySelector('#audio');
-  let correctAns = title[songindex];
+  let correctAns = songs[songindex];
   let htmlans;
   var timeleft = 5;
   
@@ -146,11 +140,11 @@ function getCookie(cname) {
       durationofsong);
 
       //use algorithm to shuffle array and print out options with the correctAns included
-      let options = [title[songindex]]; // create array called options with correct answer inside and push possible options so it can be printed to html
+      let options = [songs[songindex]]; // create array called options with correct answer inside and push possible options so it can be printed to html
       while (options.length < 4) {
         let randomIndex = Math.floor(Math.random() * songs.length);
-        if (!options.includes(title[randomIndex])) {
-          options.push(title[randomIndex]);
+        if (!options.includes(songs[randomIndex])) {
+          options.push(songs[randomIndex]);
         }
       }
   
@@ -170,8 +164,8 @@ function getCookie(cname) {
     }
 
     function loadSong(song) {
-    
-      audio.src = `../music/80s/${song}.mp3`
+      $(".rounds").text(`${round}/${rounds}`)
+      audio.src = `../music/${genre}/${song}.mp3`
   
     };
 
@@ -186,7 +180,7 @@ function getCookie(cname) {
         songindex = Math.floor(Math.random() * songs.length);
     }
     // Change global variable correctAns
-    correctAns = title[songindex];
+    correctAns = songs[songindex];
     resetGame();
     startGame(songindex);
     return songindex;
@@ -209,10 +203,7 @@ function getCookie(cname) {
     resetGame();
     getUserData();
     clearTimeout(timeout);
-    $("#endmsg").text(`Points: ${points.toFixed()}`)
-    $("#endscreen").show();
-    $("#showpoints").hide();
-    $(".homebtn").show();
+    $(".rounds").hide();
   };
 
 
@@ -241,6 +232,15 @@ function getCookie(cname) {
 
 
 function getUserData() {
+  if (diff == "Easy"){
+    currentEscore = points.toFixed();
+  }
+  else if (diff == "Medium"){
+    currentMscore = points.toFixed();
+  }
+  else if (diff == "Hard") {
+    currentHscore = points.toFixed();
+  }
   let settingsGet = {
     "async": true,
     "crossDomain": true,
@@ -252,38 +252,67 @@ function getUserData() {
         "cache-control": "no-cache"
     },
 }
+$("#loadingscreen").show();
 $.ajax(settingsGet).done(function (response) {
+    $("#loadingscreen").hide();
 
     console.log(response);
-    let pw = response.password
-    let email = response.email
-    let escore = response.easyscore;
-    let mscore = response.mediumscore;
-    let hscore = response.hardscore;
-    let aone = response.achievement1;
-    if (currentEscore > escore && diff == "Easy"){
+    pw = response.password
+    email = response.email
+    escore = response.easyscore;
+    mscore = response.mediumscore;
+    hscore = response.hardscore;
+    aone = response.achievement1;
+    if (diff == "Easy"){
+      if (currentEscore > escore){
       escore = currentEscore;
       updateForm(id,email,pw,escore,mscore,hscore,aone)
+      }
+      $("#endmsg").text(`Points: ${points.toFixed()} \n Personal Best: ${escore}`)
     }
-    else if (currentMscore > mscore && diff == "Medium"){
+    else if (diff == "Medium"){
+      if (currentMscore > mscore){
       mscore = currentMscore;
       updateForm(id,email,pw,escore,mscore,hscore,aone)
+      }
+      $("#endmsg").text(`Points: ${points.toFixed()} \n Personal Best: ${mscore}`)
     }
-    else if (currentHscore > hscore && diff == "Hard") {
+    else if (diff == "Hard") {
+      if (currentHscore > hscore ){
       hscore = currentHscore;
       updateForm(id,email,pw,escore,mscore,hscore,aone)
+      }
+      $("#endmsg").text(`Points: ${points.toFixed()} \n Personal Best: ${hscore}`)
     }
+
+    
+
+    $("#endscreen").show();
+    $("#showpoints").hide();
+    $(".homebtn").show();
 
 
 });
 }
 
+}
 
 
-  
 
-  
-
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 
 
