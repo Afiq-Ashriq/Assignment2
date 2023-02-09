@@ -17,7 +17,7 @@ Who is the website for: Our target audience for this webgame are individuals who
 
 design rationale
 - We chose purple as it fits in with who we want our audience to be. We want our game to be played by anyone not only children so purple is a perfect colour for us. Our purple is a mix of light and dark, if it were other colours it would either look too boring or too kiddish.
-- We have different fonts mainly a pixelated font to remind the users that it is a game, and our second font is a sort of styling font that would fit into the theme of "Music".
+- We have different fonts mainly a pixelated font to remind the users that it is a game, and our second font is a sort of styling font that would fit into the theme of "Music" because it has the sharp corners and looks of a Metal band name. E.g. Metallica.
 
 
 ## Features implemented:
