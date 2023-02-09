@@ -86,6 +86,10 @@ div.background {
     font-family: 'Source Code Pro', monospace;
     color: whitesmoke;
 }
+.popup h3 {
+    margin-right: 15%;
+    font-size: 1.3em;
+}
 .popup .content {
     max-height: 30%;
     overflow: auto;
@@ -131,6 +135,6 @@ div.background {
         font-size: 0.85em;
     }
     .popup{
-        width: 80%;
+        width: 70%;
       }
 }

@@ -21,16 +21,14 @@ We are haven't decided on the colour template of the website yet.
 ## Features implemented:
 1. Basic game function (Loading, playing and guessing of songs)
 2. Login/Sign-up (Sign up with password & unique email check)
+3. Change account email/password
+4. Feedback
 
     
 
 ## Features not yet implemented:
     1) Achievement
-    2) Feedback
-    3) 
-    4) 
-    5)
-    6)
+    
 
 ## TESTING
 
