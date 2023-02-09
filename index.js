@@ -4,7 +4,7 @@ function getCookie(){
 
 
 
-var difficulty = null;
+var difficulty = "Easy";
 var genre = null;
 
 $(".diffbtn").click(function() {

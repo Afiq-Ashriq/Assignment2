@@ -3,6 +3,7 @@ let id = getCookie("name");
 let currentEscore;
 let currentMscore;
 let currentHscore;
+let numOfcorrect = 0;
 let pw;
 let email;
 let escore;
@@ -32,8 +33,12 @@ var diff = sessionStorage.getItem("difficulty");
   songs = ["I Don't Want to Miss a Thing",'Out of Time','Viva La Vida','Deeper Understanding','Virtual Insanity','Space Cowboy','Space Song']; 
   }
   else if (genre == "K-Pop"){
-    songs = ['OMG','Tick Tick Boom','Back Down','CROWN','Underwater','MORE']
+    songs = ['OMG','Tick Tick Boom','Back Down','CROWN','Underwater','MORE','TT','Hurt','YOU AND I','Scream','COME BACK HOME']
   }
+  else if (genre == "J-Pop"){
+    songs = []
+  }
+  
   console.log(genre);
   console.log(diff);
   let timeout;
@@ -66,6 +71,7 @@ var diff = sessionStorage.getItem("difficulty");
         clearInterval(timerStart);
         $(".option").click(function(){
           if(this.innerHTML === correctAns){
+            numOfcorrect ++;
             clearTimeout(timeout);
             let timetaken = audio.currentTime;
             points += 150 - (timetaken * 5);
@@ -211,7 +217,7 @@ var diff = sessionStorage.getItem("difficulty");
 
 
   function updateForm(id,email,pw,escore,mscore,hscore,aone) {
-    var jsondata = {"email": email, "password": pw, "easyscore": escore, "mediumscore": mscore, "hardscore": hscore,"achievement1": aone};
+    var jsondata = {"email": email, "password": pw, "easyscore": escore, "mediumscore": mscore, "hardscore": hscore,"achievement1": aone, "achievement2":atwo,"achievement3":athree};
     let settingsPut = {
         "async": true,
         "crossDomain": true,
@@ -243,6 +249,9 @@ function getUserData() {
   }
   else if (diff == "Hard") {
     currentHscore = points.toFixed();
+    if (numOfcorrect == rounds) {
+      achievement3 = true;
+    }
   }
   let settingsGet = {
     "async": true,
@@ -267,10 +276,16 @@ $.ajax(settingsGet).done(function (response) {
     mscore = response.mediumscore;
     hscore = response.hardscore;
     aone = response.achievement1;
+    atwo = response.achievement2;
+    athree = response.achievement3;
     if (diff == "Easy"){
+      if (numOfcorrect == rounds) {
+        aone = true;
+        updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+      }
       if (currentEscore > escore){
       escore = currentEscore;
-      updateForm(id,email,pw,escore,mscore,hscore,aone)
+      updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree);
       }
       content = `${content}<tr>
       <td>Points: ${points.toFixed()}</td></tr>
@@ -280,18 +295,37 @@ $.ajax(settingsGet).done(function (response) {
 
     }
     else if (diff == "Medium"){
+      if (numOfcorrect == rounds) {
+        atwo = true;
+        updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+      }
       if (currentMscore > mscore){
       mscore = currentMscore;
-      updateForm(id,email,pw,escore,mscore,hscore,aone)
+      updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
-      $("#endmsg").text(`Points: ${points.toFixed()} \n Personal Best: ${mscore}`)
+      content = `${content}<tr>
+      <td>Points: ${points.toFixed()}</td></tr>
+      <tr><td>Personal Best: ${mscore}</td></tr>
+      `;
+      $("#endmsg").html(content);
+
     }
     else if (diff == "Hard") {
+      if (numOfcorrect == rounds) {
+        athree = true;
+        updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+      }
       if (currentHscore > hscore ){
       hscore = currentHscore;
-      updateForm(id,email,pw,escore,mscore,hscore,aone)
+      updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
-      $("#endmsg").text(`Points: ${points.toFixed()} \n Personal Best: ${hscore}`)
+      content = `${content}<tr>
+      <td>Points: ${points.toFixed()}</td></tr>
+      <tr><td>Personal Best: ${hscore}</td></tr>
+      `;
+      $("#endmsg").html(content);
+
+
     }
 
     
