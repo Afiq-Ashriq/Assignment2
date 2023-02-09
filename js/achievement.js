@@ -27,22 +27,24 @@ $(document).ready(function(){
         achievementtwo = response["achievement2"];
         achievementthree = response["achievement3"];
 
-        /* Check for achievement 1 */
         if (achievementone == true)
         {
             $(".achone").show();
             $(".achempty").hide();
-        }
+            console.log("1");
+        };
         if (achievementtwo == true)
         {
             $(".achtwo").show();
             $(".achempty").hide();
-        }
+            console.log("2");
+        };
         if (achievementthree == true)
         {
             $(".achthree").show();
             $(".achempty").hide();
-        }
+            console.log("3");
+        };
     });
 })
 
