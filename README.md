@@ -22,7 +22,10 @@ We are haven't decided on the colour template of the website yet.
 1. Basic game function (Loading, playing and guessing of songs)
 2. Login/Sign-up (Sign up with password & unique email check)
 3. Change account email/password
-4. Feedback
+4. Updating highscores
+5. Choosing difficulty
+6. Choosing genre
+7. Feedback
 
     
 
