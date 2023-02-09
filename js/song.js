@@ -279,7 +279,7 @@ $.ajax(settingsGet).done(function (response) {
     atwo = response.achievement2;
     athree = response.achievement3;
     if (diff == "Easy"){
-      if (numOfcorrect == rounds) {
+      if (numOfcorrect == rounds && aone == false) {
         aone = true;
         updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
@@ -295,7 +295,7 @@ $.ajax(settingsGet).done(function (response) {
 
     }
     else if (diff == "Medium"){
-      if (numOfcorrect == rounds) {
+      if (numOfcorrect == rounds && atwo == false) {
         atwo = true;
         updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
@@ -311,7 +311,7 @@ $.ajax(settingsGet).done(function (response) {
 
     }
     else if (diff == "Hard") {
-      if (numOfcorrect == rounds) {
+      if (numOfcorrect == rounds && athree == false) {
         athree = true;
         updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
