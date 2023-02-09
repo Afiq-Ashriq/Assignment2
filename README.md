@@ -40,6 +40,9 @@ design rationale
 
 ## CREDITS
 door-key.png - https://www.freepik.com
+crown.png - https://static.vecteezy.com/system/resources/previews/014/390/621/original/realistic-royal-crown-gold-metal-symbol-of-power-3d-rendering-icon-on-transparent-background-png.png
+crown2.png - adobeillustrator
+crown3.png - adobeillustrator
 ## Resources from:
 - To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
 - To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes

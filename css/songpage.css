@@ -9,10 +9,14 @@
     align-items: center;
 }
 .time {
+    font-family: 'VT323', monospace;
+
+    margin-top: 230px;
     text-align: center;
-    font-size: 80px;
+    font-size: 9em;
 }
 .song-button {
+    margin-top: 75px;
     width: 90%;
 }
 
@@ -69,35 +73,13 @@
     margin-top: 10px;
     margin-left: 10px;
 }
-
-/* #startbtn {
-    width: 400px;
-    height: 400px;
-    background-color: yellow;
+.rounds {
+    color: whitesmoke;
+    font-family: 'VT323', monospace;
+    font-size: 1.80em;
+    margin-top: 10px;
+    margin-left: 15px;
 }
-#startbtn:hover {
-    cursor: pointer;
-    scale: 1.5;
-
-    
-} */
-
-/* .highlight {
-    background-color: black;
-    
-} */
-/* 
-#footer {
-    background-color: rgba(88, 88, 88, 0.2);
-}
-#navBarAcc {
-    font-size: 1.05em;
-}
-#navBarAcc:hover {
-    color:rgb(3, 58, 135);
-    transition-duration: 0.25s;
-}
- */
 
 #loadingscreen {
     display: flex;
@@ -107,9 +89,10 @@
     z-index: 1;
 }
 #endmsg {
+    margin-top: 120px;
     color: whitesmoke;
     font-family: 'VT323', monospace;
-    font-size: 4em;
+    font-size: 3.4em;
 }
 .homebtn {
     text-decoration: none;
