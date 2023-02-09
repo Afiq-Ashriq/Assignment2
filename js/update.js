@@ -24,6 +24,8 @@ $.ajax(settingsGet).done(function (response) {
     let mscore = response.mediumscore;
     let hscore = response.hardscore;
     let aone = response.achievement1;
+    let atwo = response.achievement2;
+    let athree = response.achievement3;
 
     $("#updatesubmit").prop("disable", false);
 
@@ -32,15 +34,15 @@ $.ajax(settingsGet).done(function (response) {
         let email = $("#email-update").val();
         let password = $("#pw-update").val();
     
-        updateForm(id, email, password, escore, mscore, hscore, aone);
+        updateForm(id, email, password, escore, mscore, hscore, aone, atwo, athree);
     });
 });
 
 
 
 
-function updateForm(id, email, pw, escore, mscore, hscore, aone) {
-    var jsondata = {"email": email, "password": pw, "easyscore": escore, "mediumscore": mscore, "hardscore": hscore,"achievement1": aone};
+function updateForm(id, email, pw, escore, mscore, hscore, aone, atwo, athree) {
+    var jsondata = {"email": email, "password": pw, "easyscore": escore, "mediumscore": mscore, "hardscore": hscore,"achievement1": aone,"achievement2": atwo,"achievement3": athree};
     let settingsPut = {
         "async": true,
         "crossDomain": true,
