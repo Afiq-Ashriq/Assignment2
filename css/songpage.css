@@ -127,6 +127,13 @@
     justify-content: center;
     flex-direction: column;
     padding: 10px;
+
 }
 
 
+@media  screen and (max-width: 600px) {
+    #endmsg {
+        font-size: 30px;
+    }
+    
+}
