@@ -49,7 +49,9 @@ $("#signupsubmit").on("click",function(e){
                 "easyscore" : 0,
                 "mediumscore" : 0,
                 "hardscore" : 0,
-                "achievement1" : false
+                "achievement1" : false,
+                "achievement2" : false,
+                "achievement3" : false,
 
             };
             let settingsPost = {

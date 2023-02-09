@@ -2,8 +2,12 @@ const apikey = "63b70aaf969f06502871aa9e";
 
 let id = getCookie("name");
 let achievementone = false;
+let achievementtwo = false;
+let achievementthree = false;
 
 $(".achone").hide();
+$(".achtwo").hide();
+$(".achthree").hide();
 
 $(document).ready(function(){
     let settings = {
@@ -20,11 +24,23 @@ $(document).ready(function(){
     $.ajax(settings).done(function (response) {
         
         achievementone = response["achievement1"];
+        achievementtwo = response["achievement2"];
+        achievementthree = response["achievement3"];
 
         /* Check for achievement 1 */
         if (achievementone == true)
         {
             $(".achone").show();
+            $(".achempty").hide();
+        }
+        if (achievementtwo == true)
+        {
+            $(".achtwo").show();
+            $(".achempty").hide();
+        }
+        if (achievementthree == true)
+        {
+            $(".achthree").show();
             $(".achempty").hide();
         }
     });
