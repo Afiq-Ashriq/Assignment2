@@ -27,8 +27,8 @@ We are haven't decided on the colour template of the website yet.
     
 
 ## Features not yet implemented:
-    1. Achievement
-    2. Different scores for the different genre (Scores are currently shared between the genres but not the difficulty)
+1. Achievement
+2. Different scores for the different genre (Scores are only different for the difficulties as of now)
     
 
 ## TESTING
