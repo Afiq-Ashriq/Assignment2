@@ -44,7 +44,7 @@ design rationale
 - crown.png - https://static.vecteezy.com/system/resources/previews/014/390/621/original/realistic-royal-crown-gold-metal-symbol-of-power-3d-rendering-icon-on-transparent-background-png.png
 - crown2.png - adobeillustrator
 - crown3.png - adobeillustrator
-- Tongo danving - https://tenor.com/view/tongo-dancing-triangle-moves-grooves-gif-17106646
+- Tongo dancing - https://tenor.com/view/tongo-dancing-triangle-moves-grooves-gif-17106646
 - Inspiration from kahoot.com - https://kahoot.com/?utm_name=controller_app&utm_source=controller&utm_campaign=controller_app&utm_medium=link
 - Loading animation - https://lottiefiles.com/3042-loading
 ## Resources from:
