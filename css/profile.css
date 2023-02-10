@@ -1,6 +1,8 @@
 
 .ach-condition, .ach-title {
     text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 1.35em;
 }
 .ach-icon {
     height: 150px;
