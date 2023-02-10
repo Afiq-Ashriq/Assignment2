@@ -3,11 +3,11 @@ function getCookie(){
 }
 
 
-
-var difficulty = "Easy";
+let difficulty = "Easy";
 var genre = null;
 
 $(".diffbtn").click(function() {
+
     $(".diffbtn").css("color", "whitesmoke");
     $(this).css("color", "rgb(255, 74, 19)");
 
@@ -17,9 +17,13 @@ $(".diffbtn").click(function() {
     $("#diffmsg p").fadeIn().delay(2000).fadeOut();
     console.log(difficulty);
     sessionStorage.setItem("difficulty",difficulty);
+
 })
 
+
+
 $(".gbtn").click(function(){
+
     genre = $(this).text();
     console.log(genre);
     sessionStorage.setItem("genre",genre)
