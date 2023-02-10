@@ -57,6 +57,7 @@ Game:
 - Tongo dancing - https://tenor.com/view/tongo-dancing-triangle-moves-grooves-gif-17106646
 - Inspiration from kahoot.com - https://kahoot.com/?utm_name=controller_app&utm_source=controller&utm_campaign=controller_app&utm_medium=link
 - Loading animation - https://lottiefiles.com/3042-loading
+- Style disabled buttons. https://stackoverflow.com/questions/14750078/style-disabled-button-with-css
 ## Resources from:
 - To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
 - To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
