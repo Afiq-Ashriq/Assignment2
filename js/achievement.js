@@ -49,6 +49,10 @@ $(document).ready(function(){
             $(".achthreelocked").hide();
             console.log("3");
         };
+        if (achievementthree != true && achievementtwo != true && achievementone != true)
+        {
+            $(".achievementblock").hide();
+        }
     });
 })
 
