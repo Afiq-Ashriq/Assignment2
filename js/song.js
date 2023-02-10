@@ -222,7 +222,7 @@ var diff = sessionStorage.getItem("difficulty");
   };
 
 
-  function updateForm(id,email,pw,escore,mscore,hscore,aone) {
+  function updateScore(id,email,pw,escore,mscore,hscore,aone) {
     var jsondata = {"email": email, "password": pw, "easyscore": escore, "mediumscore": mscore, "hardscore": hscore,"achievement1": aone, "achievement2":atwo,"achievement3":athree};
     let settingsPut = {
         "async": true,
@@ -288,11 +288,11 @@ $.ajax(settingsGet).done(function (response) {
       if (numOfcorrect == rounds && aone == false) {
         alert("Achievement unlocked!");
         aone = true;
-        updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+        updateScore(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
       if (currentEscore > escore){
       escore = currentEscore;
-      updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree);
+      updateScore(id,email,pw,escore,mscore,hscore,aone,atwo,athree);
       }
       content = `${content}<tr>
       <td>Points: ${points.toFixed()}</td></tr>
@@ -305,11 +305,11 @@ $.ajax(settingsGet).done(function (response) {
       if (numOfcorrect == rounds && atwo == false) {
         alert("Achievement unlocked!");
         atwo = true;
-        updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+        updateScore(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
       if (currentMscore > mscore){
       mscore = currentMscore;
-      updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+      updateScore(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
       content = `${content}<tr>
       <td>Points: ${points.toFixed()}</td></tr>
@@ -322,11 +322,11 @@ $.ajax(settingsGet).done(function (response) {
       if (numOfcorrect == rounds && athree == false) {
         alert("Achievement unlocked!");
         athree = true;
-        updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+        updateScore(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
       if (currentHscore > hscore ){
       hscore = currentHscore;
-      updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
+      updateScore(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
       content = `${content}<tr>
       <td>Points: ${points.toFixed()}</td></tr>

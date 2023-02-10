@@ -16,7 +16,6 @@ $(".diffbtn").click(function() {
     $("#diffmsg p").text(`${difficulty} is selected`);
     $("#diffmsg p").fadeIn().delay(2000).fadeOut();
     sessionStorage.setItem("difficulty",difficulty);
-    console.log(difficulty);
 
 })
 
