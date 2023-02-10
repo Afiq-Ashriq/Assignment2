@@ -60,6 +60,7 @@
 }
 
 .correct {
+    transform: scale(1.05);
     background-color: green !important;
 }
 
@@ -112,6 +113,7 @@
     padding: 10px;
 
 }
+
 
 
 @media  screen and (max-width: 600px) {

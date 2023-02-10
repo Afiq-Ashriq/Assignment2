@@ -15,10 +15,12 @@ $(".diffbtn").click(function() {
     $(".diffbtn").not(this).addClass('highlight');
     $("#diffmsg p").text(`${difficulty} is selected`);
     $("#diffmsg p").fadeIn().delay(2000).fadeOut();
-    console.log(difficulty);
     sessionStorage.setItem("difficulty",difficulty);
+    console.log(difficulty);
 
 })
+
+
 
 
 

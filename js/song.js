@@ -10,6 +10,8 @@ let escore;
 let mscore;
 let hscore;
 let aone;
+
+
 var diff = sessionStorage.getItem("difficulty");
 
 
@@ -35,9 +37,7 @@ var diff = sessionStorage.getItem("difficulty");
   else if (genre == "K-Pop"){
     songs = ['OMG','Tick Tick Boom','Back Down','CROWN','Underwater','MORE','TT','Hurt','YOU AND I','Scream','COME BACK HOME']
   }
-  else if (genre == "J-Pop"){
-    songs = []
-  }
+
 
   
   console.log(genre);
@@ -48,11 +48,13 @@ var diff = sessionStorage.getItem("difficulty");
   $(".song-button").hide();
   $("#endscreen").hide();
   let durationofsong = 30000;
+
+
   if (diff == "Medium"){
-    durationofsong = 20000;
+    durationofsong = 15000;
   }
   else if (diff == "Hard") {
-    durationofsong = 5000
+    durationofsong = 7000;
   }
   console.log(durationofsong);
   let usedSongs = [];
@@ -63,6 +65,7 @@ var diff = sessionStorage.getItem("difficulty");
   let correctAns = songs[songindex];
   let htmlans;
   var timeleft = 5;
+
   
     var timerStart = setInterval(function(){
       if(timeleft <= 0){
@@ -72,6 +75,7 @@ var diff = sessionStorage.getItem("difficulty");
         clearInterval(timerStart);
         $(".option").click(function(){
           if(this.innerHTML === correctAns){
+            isCorrect = true;
             numOfcorrect ++;
             clearTimeout(timeout);
             let timetaken = audio.currentTime;
@@ -172,6 +176,7 @@ var diff = sessionStorage.getItem("difficulty");
       $(".song-button").show();
       
     }
+
 
     function loadSong(song) {
       $(".rounds").text(`${round}/${rounds}`)
