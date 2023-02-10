@@ -9,6 +9,10 @@ $(".achone").hide();
 $(".achtwo").hide();
 $(".achthree").hide();
 
+$(".achonelocked").show();
+$(".achtwolocked").show();
+$(".achthreelocked").show();
+
 $(document).ready(function(){
     let settings = {
         "async": true,
@@ -30,19 +34,19 @@ $(document).ready(function(){
         if (achievementone == true)
         {
             $(".achone").show();
-            $(".achempty").hide();
+            $(".achonelocked").hide();
             console.log("1");
         };
         if (achievementtwo == true)
         {
             $(".achtwo").show();
-            $(".achempty").hide();
+            $(".achtwolocked").hide();
             console.log("2");
         };
         if (achievementthree == true)
         {
             $(".achthree").show();
-            $(".achempty").hide();
+            $(".achthreelocked").hide();
             console.log("3");
         };
     });
