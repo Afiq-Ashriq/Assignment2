@@ -25,9 +25,7 @@
 
     font-size: 1.45em;
 }
-#edif {
-    color: rgb(255, 74, 19);
-}
+
 #mdif {
     font-family: 'Underdog', cursive;
 }
@@ -50,7 +48,8 @@
   flex-direction: row;
   justify-content: center;
 }
-.genres a {
+.genres button {
+    background-color: transparent;
     font-family: 'VT323', monospace;
     font-size: 1.4em;
 
@@ -61,7 +60,7 @@
     border: 3px white solid;
     border-radius: 8px;
 }
-.genres a:hover {
+.genres button:hover {
     color: rgb(255, 74, 19);
     border: 3px rgb(255, 74, 19) solid;
     transition-duration: 0.35s;
@@ -83,6 +82,7 @@
   height: 20px;
   float: left;
 }
+
 @keyframes midshake {
     10%, 90% {
         transform: translate3d(-1px, 0, 0);

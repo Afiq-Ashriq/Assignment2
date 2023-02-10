@@ -6,7 +6,6 @@ $("#fbsubmit").on("click", function(e){
     $("#fbemail").val(""); 
     $("#fbtextarea").val("");
 
-    console.log("form submitted");
     $(".alert").show();
     $(".alert").fadeIn().delay(3000).fadeOut();
 })

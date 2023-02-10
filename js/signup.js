@@ -2,7 +2,6 @@ const apikey = "63b70aaf969f06502871aa9e";
 $(".alert").hide()
 
 $("#signupsubmit").on("click",function(e){
-    console.log("submitted");
     e.preventDefault();
     let email = $("#email-signup").val();
     let password = $("#pw-signup").val();
@@ -11,7 +10,6 @@ $("#signupsubmit").on("click",function(e){
 
     if (password != confirmpassword)
     {
-        console.log("password does not match");
         $("#password-issue").fadeIn().delay(3000).fadeOut();
     }
     else
@@ -34,11 +32,9 @@ $("#signupsubmit").on("click",function(e){
                 let item = response[i].email;
                 existingemail.push(item);
             }
-            console.log(existingemail);
         
         if (existingemail.includes(email))
         {  
-            console.log("email is not unique");
             $("#email-issue").fadeIn().delay(3000).fadeOut();
         }
         else
@@ -72,7 +68,6 @@ $("#signupsubmit").on("click",function(e){
               
             };
             $.ajax(settingsPost).done(function (response) {
-                console.log("Account successfully created");
                 window.location.href = '../html/login.html';
             });
 

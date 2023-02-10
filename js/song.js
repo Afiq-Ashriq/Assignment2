@@ -40,8 +40,6 @@ var diff = sessionStorage.getItem("difficulty");
 
 
   
-  console.log(genre);
-  console.log(diff);
   let timeout;
   let round = 1;
   $(".homebtn").hide();
@@ -56,7 +54,6 @@ var diff = sessionStorage.getItem("difficulty");
   else if (diff == "Hard") {
     durationofsong = 7000;
   }
-  console.log(durationofsong);
   let usedSongs = [];
   var points = 0;
   const rounds = 5;
@@ -80,7 +77,6 @@ var diff = sessionStorage.getItem("difficulty");
             clearTimeout(timeout);
             let timetaken = audio.currentTime;
             points += 200 - (timetaken * 10);
-            console.log(timetaken.toFixed(2));
             $(this).addClass("correct");
             $(this).prop("disabled",true);
             if(round < rounds){
@@ -127,7 +123,6 @@ var diff = sessionStorage.getItem("difficulty");
         return true;
       }
       $("#showpoints").text(`Points: ${points.toFixed()}`)
-      console.log(round);
       usedSongs.push(songs[songindex]);
       loadSong(songs[songindex]);
       audio.play();
@@ -187,7 +182,6 @@ var diff = sessionStorage.getItem("difficulty");
 
   
     function newRound() {
-    console.log("new");
     round++;
     clearTimeout(timeout);
     // To get new and different song check if it is inside usedSongs array
@@ -240,7 +234,6 @@ var diff = sessionStorage.getItem("difficulty");
       
     };
     $.ajax(settingsPut).done(function (response) {
-        console.log(response);
         console.log("success");
     });
 }
@@ -274,7 +267,6 @@ $("#loadingscreen").show();
 $.ajax(settingsGet).done(function (response) {
     $("#loadingscreen").hide();
 
-    console.log(response);
     let content = "" 
     pw = response.password
     email = response.email

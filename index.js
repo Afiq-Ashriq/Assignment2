@@ -3,21 +3,28 @@
 // }
 
 
-let difficulty = "Easy";
 var genre = null;
 
-$(".diffbtn").click(function() {
 
+$(".gbtn").each(function() {
+    $(this).addClass('dimbackground');
+    $(this).prop('disabled',true);
+})
+
+$(".diffbtn").click(function() {
+    $(".gbtn").each(function() {
+        $(this).prop('disabled',false);
+    })
     $(".diffbtn").css("color", "whitesmoke");
     $(this).css("color", "rgb(255, 74, 19)");
-
     difficulty = $(this).val();
     $(".diffbtn").not(this).addClass('highlight');
     $("#diffmsg p").text(`${difficulty} is selected`);
     $("#diffmsg p").fadeIn().delay(2000).fadeOut();
-    sessionStorage.setItem("difficulty",difficulty);
-
+    sessionStorage.setItem("difficulty",difficulty)
 })
+
+
 
 
 
@@ -26,7 +33,6 @@ $(".diffbtn").click(function() {
 $(".gbtn").click(function(){
 
     genre = $(this).text();
-    console.log(genre);
     sessionStorage.setItem("genre",genre)
 
 })

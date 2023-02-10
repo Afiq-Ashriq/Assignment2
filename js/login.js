@@ -26,7 +26,6 @@ $("#signinsubmit").on("click",function(e){
     }
     $.ajax(settings).done(function (response) {
         for (var i = 0; i < response.length; i++) {
-            console.log(response[i]._id)
             if (response[i].email == email && response[i].password == password)
             {
                  var userid = response[i]._id;
@@ -38,8 +37,6 @@ $("#signinsubmit").on("click",function(e){
         {
             accountdata['email'] = email;
             accountdata['password'] = password;
-            console.log("Log-in successful");
-            console.log(accountdata);
 
             var date = new Date();
             date.setTime(date.getTime() + (1 * 60 * 60 * 1000));
@@ -50,7 +47,6 @@ $("#signinsubmit").on("click",function(e){
         }
         else 
         {
-            console.log("Log-in unsuccessful");
             $(".alert").fadeIn().delay(3000).fadeOut();
         }
     });

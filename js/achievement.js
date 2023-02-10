@@ -35,19 +35,16 @@ $(document).ready(function(){
         {
             $(".achone").show();
             $(".achonelocked").hide();
-            console.log("1");
         };
         if (achievementtwo == true)
         {
             $(".achtwo").show();
             $(".achtwolocked").hide();
-            console.log("2");
         };
         if (achievementthree == true)
         {
             $(".achthree").show();
             $(".achthreelocked").hide();
-            console.log("3");
         };
         if (achievementthree != true && achievementtwo != true && achievementone != true)
         {

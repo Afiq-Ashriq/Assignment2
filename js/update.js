@@ -18,7 +18,6 @@ $.ajax(settingsGet).done(function (response) {
     $("#email-update").val(response.email);
     $("#pw-update").val(response.password);
 
-    console.log(response);
 
     let escore = response.easyscore;
     let mscore = response.mediumscore;
@@ -52,11 +51,9 @@ $.ajax(settingsGet).done(function (response) {
               let item = response[i].email;
               existingemail.push(item);
           }
-          console.log(existingemail);
 
           if (existingemail.includes(email))
           {  
-          console.log("email is not unique");
           $("#email-issue").fadeIn().delay(3000).fadeOut();
           }
           else 
@@ -91,7 +88,6 @@ function updateForm(id, email, pw, escore, mscore, hscore, aone, atwo, athree) {
       
     };
     $.ajax(settingsPut).done(function (response) {
-        console.log(response);
         console.log("success");
     });
 }
