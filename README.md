@@ -52,4 +52,5 @@ design rationale
 - To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 - setTimeout syntax https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 - Fisher-Yates algorithm used for shuffling songs in array.  https://bost.ocks.org/mike/shuffle/
+- Getting cookies. https://www.w3schools.com/js/js_cookies.asp
 
