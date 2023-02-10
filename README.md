@@ -6,6 +6,10 @@ This webpage project is a platform that revists old music classics through a ser
 ## The game: 
     5 different songs will be played, each time the user will have a time limit to pick the correct song
     title. With each correct answer, points and will be awarded to the user.
+    
+    
+## Wireframe
+https://xd.adobe.com/view/814d50ad-938b-4547-9c69-6bd3e8665fe8-d41e/
 
 ## Design Process:
 Who is the website for: Our target audience for this webgame are individuals who want to have fun and expand their music knowledege. This game will expose the users to different songs from different genres and timelines.
