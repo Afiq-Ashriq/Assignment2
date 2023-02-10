@@ -7,7 +7,7 @@ var genre = null;
 
 
 $(".gbtn").each(function() {
-    $(this).addClass('dimbackground');
+    
     $(this).prop('disabled',true);
 })
 
