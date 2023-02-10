@@ -32,9 +32,8 @@ design rationale
     
 
 ## Features not yet implemented:
-1. Achievement
-2. Different scores for the different genre (Scores are only different for the difficulties as of now)
-3. Playing music using Spotify API
+1. Different scores for the different genre (Scores are only different for the difficulties as of now)
+2. Playing music using Spotify API
     
 
 ## TESTING

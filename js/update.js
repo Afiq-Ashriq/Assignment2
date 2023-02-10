@@ -1,7 +1,7 @@
 const apikey = "63b70aaf969f06502871aa9e";
-
+$(".alert").hide();
 let id = getCookie("name");
-$("#updatesubmit").prop("disable", true);
+// $("#updatesubmit").prop("disable", true);
 
 let settingsGet = {
     "async": true,
@@ -27,14 +27,44 @@ $.ajax(settingsGet).done(function (response) {
     let atwo = response.achievement2;
     let athree = response.achievement3;
 
-    $("#updatesubmit").prop("disable", false);
+    // $("#updatesubmit").prop("disable", false);
 
     $("#updatesubmit").on("click", function (e) {
         e.preventDefault();
         let email = $("#email-update").val();
         let password = $("#pw-update").val();
     
-        updateForm(id, email, password, escore, mscore, hscore, aone, atwo, athree);
+        let existingemail = [];
+        let settingsGet = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://interactivedev-ab73.restdb.io/rest/account",
+          "method": "GET",
+          "headers": {
+              "content-type": "application/json",
+              "x-apikey": apikey,
+              "cache-control": "no-cache"
+          },
+        }
+        $.ajax(settingsGet).done(function (response) {
+          for (var i = 0; i < response.length; i++) 
+          {
+              let item = response[i].email;
+              existingemail.push(item);
+          }
+          console.log(existingemail);
+
+          if (existingemail.includes(email))
+          {  
+          console.log("email is not unique");
+          $("#email-issue").fadeIn().delay(3000).fadeOut();
+          }
+          else 
+          {
+          updateForm(id, email, password, escore, mscore, hscore, aone, atwo, athree);
+          }
+        });
+        
     });
 });
 
