@@ -1,12 +1,12 @@
 
-#ach-condition, #ach-title {
+.ach-condition, .ach-title {
     text-align: center;
 }
-#ach-icon {
+.ach-icon {
     height: 150px;
     width: 150px;
 }
-#ach-icon-locked {
+.ach-icon-locked {
     height: 150px;
     width: 150px;
     filter: grayscale(90%);
