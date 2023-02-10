@@ -32,9 +32,8 @@ design rationale
     
 
 ## Features not yet implemented:
-1. Achievement
-2. Different scores for the different genre (Scores are only different for the difficulties as of now)
-3. Playing music using Spotify API
+1. Different scores for the different genre (Scores are only different for the difficulties as of now)
+2. Playing music using Spotify API
     
 
 ## TESTING
@@ -44,7 +43,7 @@ design rationale
 - crown.png - https://static.vecteezy.com/system/resources/previews/014/390/621/original/realistic-royal-crown-gold-metal-symbol-of-power-3d-rendering-icon-on-transparent-background-png.png
 - crown2.png - adobeillustrator
 - crown3.png - adobeillustrator
-- Tongo danving - https://tenor.com/view/tongo-dancing-triangle-moves-grooves-gif-17106646
+- Tongo dancing - https://tenor.com/view/tongo-dancing-triangle-moves-grooves-gif-17106646
 - Inspiration from kahoot.com - https://kahoot.com/?utm_name=controller_app&utm_source=controller&utm_campaign=controller_app&utm_medium=link
 - Loading animation - https://lottiefiles.com/3042-loading
 ## Resources from:
@@ -53,4 +52,5 @@ design rationale
 - setTimeout syntax https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 - Fisher-Yates algorithm used for shuffling songs in array.  https://bost.ocks.org/mike/shuffle/
 - Getting cookies. https://www.w3schools.com/js/js_cookies.asp
+- Songs from https://www.youtube.com/
 
