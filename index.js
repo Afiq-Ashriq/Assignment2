@@ -1,6 +1,6 @@
-function getCookie(){
-    alert(document.cookie);
-}
+// function getCookie(){
+//     alert(document.cookie);
+// }
 
 
 let difficulty = "Easy";

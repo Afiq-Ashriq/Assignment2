@@ -38,6 +38,7 @@ var diff = sessionStorage.getItem("difficulty");
   else if (genre == "J-Pop"){
     songs = []
   }
+
   
   console.log(genre);
   console.log(diff);
@@ -280,6 +281,7 @@ $.ajax(settingsGet).done(function (response) {
     athree = response.achievement3;
     if (diff == "Easy"){
       if (numOfcorrect == rounds && aone == false) {
+        alert("Achievement unlocked!");
         aone = true;
         updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
@@ -296,6 +298,7 @@ $.ajax(settingsGet).done(function (response) {
     }
     else if (diff == "Medium"){
       if (numOfcorrect == rounds && atwo == false) {
+        alert("Achievement unlocked!");
         atwo = true;
         updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
@@ -312,6 +315,7 @@ $.ajax(settingsGet).done(function (response) {
     }
     else if (diff == "Hard") {
       if (numOfcorrect == rounds && athree == false) {
+        alert("Achievement unlocked!");
         athree = true;
         updateForm(id,email,pw,escore,mscore,hscore,aone,atwo,athree)
       }
