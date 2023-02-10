@@ -6,6 +6,10 @@ This webpage project is a platform that revists old music classics through a ser
 ## The game: 
     5 different songs will be played, each time the user will have a time limit to pick the correct song
     title. With each correct answer, points and will be awarded to the user.
+    
+    
+## Wireframe
+https://xd.adobe.com/view/814d50ad-938b-4547-9c69-6bd3e8665fe8-d41e/
 
 ## Design Process:
 Who is the website for: Our target audience for this webgame are individuals who want to have fun and expand their music knowledege. This game will expose the users to different songs from different genres and timelines.
@@ -23,7 +27,7 @@ design rationale
 ## Features implemented:
 1. Basic game function (Loading, playing and guessing of songs)
 2. Login/Sign-up (Sign up with password & unique email check)
-3. Change account email/password
+3. Change account email/password (unique email check)
 4. Updating highscores
 5. Choosing difficulty
 6. Choosing genre
@@ -37,7 +41,14 @@ design rationale
     
 
 ## TESTING
+Account:
+    1. When creating account with a non-matching password, the process should not continue as an alert notifying user of non-matching password should appear
+    2. When creating account with an email that is already used, the process should not continue as an alert notifying user of that email being taken should appear
+    3. When logging in, only the same set of email and password can be used to log into the specific account
+    4. When updating account email or password, the process should not continue if user try to change the email to something that is already taken as an alert reflect that error.
 
+Game:
+    1. Users cannot spam the game buttons when choosing for the correct answers as only the first input is taken.
 ## CREDITS
 - door-key.png - https://www.freepik.com
 - crown.png - https://static.vecteezy.com/system/resources/previews/014/390/621/original/realistic-royal-crown-gold-metal-symbol-of-power-3d-rendering-icon-on-transparent-background-png.png
