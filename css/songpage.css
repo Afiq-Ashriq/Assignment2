@@ -20,8 +20,8 @@
     width: 90%;
 }
 
-.col-6 {
-    height: 200px;
+.gamebutton {
+    height: 180px;
 }
 .song-button div {
     display: flex;
@@ -118,5 +118,9 @@
     #endmsg {
         font-size: 30px;
     }
+    .song-button div button {
+        font-size: 1.2em; 
+    }
+
     
 }
