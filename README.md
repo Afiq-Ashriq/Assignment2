@@ -40,15 +40,16 @@ design rationale
 ## TESTING
 
 ## CREDITS
-door-key.png - https://www.freepik.com
-crown.png - https://static.vecteezy.com/system/resources/previews/014/390/621/original/realistic-royal-crown-gold-metal-symbol-of-power-3d-rendering-icon-on-transparent-background-png.png
-crown2.png - adobeillustrator
-crown3.png - adobeillustrator
-Inspiration from kahoot.com - https://kahoot.com/?utm_name=controller_app&utm_source=controller&utm_campaign=controller_app&utm_medium=link
-Loading animation - https://lottiefiles.com/3042-loading
+- door-key.png - https://www.freepik.com
+- crown.png - https://static.vecteezy.com/system/resources/previews/014/390/621/original/realistic-royal-crown-gold-metal-symbol-of-power-3d-rendering-icon-on-transparent-background-png.png
+- crown2.png - adobeillustrator
+- crown3.png - adobeillustrator
+- Tongo danving - https://tenor.com/view/tongo-dancing-triangle-moves-grooves-gif-17106646
+- Inspiration from kahoot.com - https://kahoot.com/?utm_name=controller_app&utm_source=controller&utm_campaign=controller_app&utm_medium=link
+- Loading animation - https://lottiefiles.com/3042-loading
 ## Resources from:
 - To round up points and gold https://www.w3schools.com/jsref/jsref_tofixed.asp
 - To see if item is in an array https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 - setTimeout syntax https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 - Fisher-Yates algorithm used for shuffling songs in array.  https://bost.ocks.org/mike/shuffle/
-All the songs:
+
